@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS开发 - 创建对象时 alloc 和 init 的作用 | LiCheng</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.339bfd79.css" as="style"><link rel="preload" href="/assets/js/app.d6e79a92.js" as="script"><link rel="preload" href="/assets/js/2.618b1e05.js" as="script"><link rel="preload" href="/assets/js/28.31431aee.js" as="script"><link rel="prefetch" href="/assets/js/10.a08359a6.js"><link rel="prefetch" href="/assets/js/11.0c73a8aa.js"><link rel="prefetch" href="/assets/js/12.57403df7.js"><link rel="prefetch" href="/assets/js/13.58bd7ead.js"><link rel="prefetch" href="/assets/js/14.d01f8dab.js"><link rel="prefetch" href="/assets/js/15.17b89253.js"><link rel="prefetch" href="/assets/js/16.b83fd53a.js"><link rel="prefetch" href="/assets/js/17.c31bf76b.js"><link rel="prefetch" href="/assets/js/18.9ec5010b.js"><link rel="prefetch" href="/assets/js/19.8df7bf95.js"><link rel="prefetch" href="/assets/js/20.89bcfc28.js"><link rel="prefetch" href="/assets/js/21.e6442c6c.js"><link rel="prefetch" href="/assets/js/22.d2518ef4.js"><link rel="prefetch" href="/assets/js/23.7dc260e4.js"><link rel="prefetch" href="/assets/js/24.2578a806.js"><link rel="prefetch" href="/assets/js/25.6e62215b.js"><link rel="prefetch" href="/assets/js/26.c496238a.js"><link rel="prefetch" href="/assets/js/27.94a6caf4.js"><link rel="prefetch" href="/assets/js/29.5a5d98db.js"><link rel="prefetch" href="/assets/js/3.e69c1a0c.js"><link rel="prefetch" href="/assets/js/30.05794d7d.js"><link rel="prefetch" href="/assets/js/31.4f014a3b.js"><link rel="prefetch" href="/assets/js/32.eb16534a.js"><link rel="prefetch" href="/assets/js/33.bdde09bb.js"><link rel="prefetch" href="/assets/js/34.57cca84f.js"><link rel="prefetch" href="/assets/js/35.b5f17239.js"><link rel="prefetch" href="/assets/js/4.16944ab2.js"><link rel="prefetch" href="/assets/js/5.086f51c9.js"><link rel="prefetch" href="/assets/js/6.57148270.js"><link rel="prefetch" href="/assets/js/7.3d33aabd.js"><link rel="prefetch" href="/assets/js/8.95801100.js"><link rel="prefetch" href="/assets/js/9.358c01d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.339bfd79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="LiCheng" class="logo"> <span class="site-name can-hide">LiCheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/ios/00基础知识/" class="sidebar-heading clickable"><span>基础知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/01OC知识/" class="sidebar-heading clickable open"><span>OC知识</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ios/01OC知识/对象初始化.html" class="sidebar-link">iOS开发 - 总结 Objective-C 的 self. 用法</a></li><li><a href="/ios/01OC知识/集合遍历.html" class="sidebar-link">iOS开发 - 集合遍历(NSArray，NSDictionary、NSSet)方法总结</a></li><li><a href="/ios/01OC知识/枚举.html" class="sidebar-link">iOS开发 - 关于 枚举 的使用</a></li><li><a href="/ios/01OC知识/日期排序.html" class="sidebar-link">iOS开发 - 常见的对日期进行排序</a></li><li><a href="/ios/01OC知识/alloc和init.html" class="active sidebar-link">iOS开发 - 创建对象时 alloc 和 init 的作用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/ios/01OC知识/Copy.html" class="sidebar-link">iOS开发 - 从经典问题来看 Copy 方法</a></li><li><a href="/ios/01OC知识/load.html" class="sidebar-link">iOS开发 -  +(void)load 和 +(void)initialize 的区别</a></li><li><a href="/ios/01OC知识/NSArray排序.html" class="sidebar-link">iOS开发 - NSArray 自定义的对象进行排序</a></li><li><a href="/ios/01OC知识/Null.html" class="sidebar-link">iOS开发 - OC 中 NULL、nil、Nil、NSNull 的定义及不同</a></li><li><a href="/ios/01OC知识/valueForKeyPath.html" class="sidebar-link">iOS开发 - 关于 valueForKeyPath 的常用方法</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><hr> <h3 id="i-对象为什么要alloc，init又是干嘛的？"><a href="#i-对象为什么要alloc，init又是干嘛的？" class="header-anchor">#</a> I. 对象为什么要alloc，init又是干嘛的？</h3> <hr> <p>很多人都知道，初始化一个对象应该这么写:</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>MyClass<span class="token operator">*</span> myObj <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>MyClass alloc<span class="token punctuation">]</span> init<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><p>那么有没有思考过为什么呢？其实我这么写也是完全可以的：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>MyClass <span class="token operator">*</span>myObj <span class="token operator">=</span> <span class="token punctuation">[</span>MyClass alloc<span class="token punctuation">]</span><span class="token punctuation">;</span>
+myObj <span class="token operator">=</span> <span class="token punctuation">[</span>myObj init<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div> <h4 id="上面第一行代码的意思是"><a href="#上面第一行代码的意思是" class="header-anchor">#</a> 上面第一行代码的意思是:</h4> <p><code>alloc</code>了一坨内存给<code>myObj</code>对象, 让它不释放, 并且把地址返回给指针; 但是这样过后, <code>myObj</code>是不能使用的。
+为什么呢? 因为这段代码还没有被正确的初始化;</p> <h4 id="举个例子"><a href="#举个例子" class="header-anchor">#</a> 举个例子:</h4> <blockquote><p>比如公司要盖一个基地, 那第一步就是先要向政府申请一块地皮, 第二步才能在这块地皮上进行动工盖楼;
+这里操作系统就是政府, alloc就是去申请地皮, init就是在盖房子; 如果没有调用init, 房子都没有修好, 别人怎么去住?</p></blockquote> <br>
+### II. 关于alloc
+____
+alloc的主要功能就是：`分配了一坨内存 给myObj对象, 让它不释放, 并且把地址返回给指针`
+<h4 id="调用alloc后内存是直接映射到堆还是只分配给了虚拟内存"><a href="#调用alloc后内存是直接映射到堆还是只分配给了虚拟内存" class="header-anchor">#</a> 调用alloc后内存是直接映射到堆还是只分配给了虚拟内存?</h4> <p>先了解一下内存:</p> <ul><li>**Clean Memory: ** 可以被操作系统回收的,在闪存中有备份, 能够再次读取重建。(包括: 代码段, framework等等)</li> <li>**Dirty Memory: **不可被操作系统回收的, 所有非Clean Memory。(包括:被分配了的堆控件, image cache等等)</li></ul> <p><strong>结论： alloc不只分配在虚拟内存，同时会在物理内存建立映射。</strong></p> <h4 id="这一坨内存到底是多大？"><a href="#这一坨内存到底是多大？" class="header-anchor">#</a> 这一坨内存到底是多大？</h4> <p>内存分配采用的是: <strong>字节对齐的方式.</strong>
+**字节对齐: **</p> <blockquote><p>当我们分配一块内存的时候，假设需要的内存小于16个字节，操作系统会直接分配16个字节；加入需要的内存大于16个字节，操作系统会分配a*16个字节。举个栗子，如果你调用malloc并且需要4个字节，系统会给你一块16个字节的内存块；如果你调用malloc并且需要24个字节，系统会给你一块32个字节的内存块。</p></blockquote> <br>
+### III. 关于init
+____
+<p>init 的主要功能是： <code>来初始化这块内存， 只有初始化之后，这个对象才可以使用</code></p> <p>需要调用<code>init</code>来初始化这块内存:</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token operator">-</span>init<span class="token punctuation">{</span>
+<span class="token keyword">self</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token keyword">super</span> init<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 1.</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// 2.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">;</span> <span class="token comment">// 3.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol><li>需要初始化父类的信息, 比如实例变量等等.(可以理解为: 王思聪在修房子前要询问他老爸的意见，他老爸说想娱乐会所, 他没有意见的话就会修成娱乐会所) ;</li> <li>自定义一些初始化(可以理解为: 如果王思聪有意见, 那么他会在第二步时, 悄悄改为修成LOL俱乐部) ;</li> <li>返回初始化好的对象 (可以理解为: 房子修改好了).</li></ol> <hr></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ios/01OC知识/日期排序.html" class="prev">
+        iOS开发 - 常见的对日期进行排序
+      </a></span> <span class="next"><a href="/ios/01OC知识/Copy.html">
+        iOS开发 - 从经典问题来看 Copy 方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d6e79a92.js" defer></script><script src="/assets/js/2.618b1e05.js" defer></script><script src="/assets/js/28.31431aee.js" defer></script>
+  </body>
+</html>

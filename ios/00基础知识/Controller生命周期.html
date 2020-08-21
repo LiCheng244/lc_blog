@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS开发 - ViewController 的生命周期 | LiCheng</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.339bfd79.css" as="style"><link rel="preload" href="/assets/js/app.d6e79a92.js" as="script"><link rel="preload" href="/assets/js/2.618b1e05.js" as="script"><link rel="preload" href="/assets/js/17.c31bf76b.js" as="script"><link rel="prefetch" href="/assets/js/10.a08359a6.js"><link rel="prefetch" href="/assets/js/11.0c73a8aa.js"><link rel="prefetch" href="/assets/js/12.57403df7.js"><link rel="prefetch" href="/assets/js/13.58bd7ead.js"><link rel="prefetch" href="/assets/js/14.d01f8dab.js"><link rel="prefetch" href="/assets/js/15.17b89253.js"><link rel="prefetch" href="/assets/js/16.b83fd53a.js"><link rel="prefetch" href="/assets/js/18.9ec5010b.js"><link rel="prefetch" href="/assets/js/19.8df7bf95.js"><link rel="prefetch" href="/assets/js/20.89bcfc28.js"><link rel="prefetch" href="/assets/js/21.e6442c6c.js"><link rel="prefetch" href="/assets/js/22.d2518ef4.js"><link rel="prefetch" href="/assets/js/23.7dc260e4.js"><link rel="prefetch" href="/assets/js/24.2578a806.js"><link rel="prefetch" href="/assets/js/25.6e62215b.js"><link rel="prefetch" href="/assets/js/26.c496238a.js"><link rel="prefetch" href="/assets/js/27.94a6caf4.js"><link rel="prefetch" href="/assets/js/28.31431aee.js"><link rel="prefetch" href="/assets/js/29.5a5d98db.js"><link rel="prefetch" href="/assets/js/3.e69c1a0c.js"><link rel="prefetch" href="/assets/js/30.05794d7d.js"><link rel="prefetch" href="/assets/js/31.4f014a3b.js"><link rel="prefetch" href="/assets/js/32.eb16534a.js"><link rel="prefetch" href="/assets/js/33.bdde09bb.js"><link rel="prefetch" href="/assets/js/34.57cca84f.js"><link rel="prefetch" href="/assets/js/35.b5f17239.js"><link rel="prefetch" href="/assets/js/4.16944ab2.js"><link rel="prefetch" href="/assets/js/5.086f51c9.js"><link rel="prefetch" href="/assets/js/6.57148270.js"><link rel="prefetch" href="/assets/js/7.3d33aabd.js"><link rel="prefetch" href="/assets/js/8.95801100.js"><link rel="prefetch" href="/assets/js/9.358c01d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.339bfd79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="LiCheng" class="logo"> <span class="site-name can-hide">LiCheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/ios/00基础知识/" class="sidebar-heading clickable open"><span>基础知识</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ios/00基础知识/1970.html" class="sidebar-link">iOS开发 - 计算机时间要从1970年1月1日开始算起？</a></li><li><a href="/ios/00基础知识/代码规范.html" class="sidebar-link">iOS开发 - 开发中的代码规范</a></li><li><a href="/ios/00基础知识/开发流程.html" class="sidebar-link">iOS开发 - 移动终端开发工作流程</a></li><li><a href="/ios/00基础知识/入行须知.html" class="sidebar-link">iOS开发 - 入行须知</a></li><li><a href="/ios/00基础知识/沙盒机制.html" class="sidebar-link">iOS开发 - 关于沙盒机制(sandBox)</a></li><li><a href="/ios/00基础知识/四层系统架构.html" class="sidebar-link">iOS开发 - 四层系统架构</a></li><li><a href="/ios/00基础知识/正则表达式.html" class="sidebar-link">iOS开发 - 正则表达式 系统学习</a></li><li><a href="/ios/00基础知识/App生命周期.html" class="sidebar-link">iOS开发 - APP 的生命周期</a></li><li><a href="/ios/00基础知识/Controller生命周期.html" class="active sidebar-link">iOS开发 - ViewController 的生命周期</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/ios/00基础知识/mac快捷键.html" class="sidebar-link">iOS开发 - MAC 快捷键大全</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/01OC知识/" class="sidebar-heading clickable"><span>OC知识</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="i-常用方法"><a href="#i-常用方法" class="header-anchor">#</a> I. 常用方法</h3> <hr> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token comment">// 非storyBoard(xib或非xib)都走这个方法</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span>instancetype<span class="token punctuation">)</span>initWithNibName<span class="token punctuation">:</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span><span class="token punctuation">)</span>nibNameOrNil bundle<span class="token punctuation">:</span><span class="token punctuation">(</span>NSBundle <span class="token operator">*</span><span class="token punctuation">)</span>nibBundleOrNil <span class="token punctuation">{</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">super</span> initWithNibName<span class="token punctuation">:</span>nibNameOrNil bundle<span class="token punctuation">:</span>nibBundleOrNil<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// storyBoard走这个方法</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span>instancetype<span class="token punctuation">)</span>initWithCoder<span class="token punctuation">:</span><span class="token punctuation">(</span>NSCoder <span class="token operator">*</span><span class="token punctuation">)</span>aDecoder <span class="token punctuation">{</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">super</span> initWithCoder<span class="token punctuation">:</span>aDecoder<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// xib 加载 完成</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>awakeFromNib <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> awakeFromNib<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加载视图(默认从nib)</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>loadView <span class="token punctuation">{</span>
+
+<span class="token keyword">self</span><span class="token punctuation">.</span>view <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>UIView alloc<span class="token punctuation">]</span> initWithFrame<span class="token punctuation">:</span><span class="token punctuation">[</span>UIScreen mainScreen<span class="token punctuation">]</span><span class="token punctuation">.</span>bounds<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token punctuation">[</span>UIColor redColor<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图控制器中的视图加载完成，viewController自带的view加载完成</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLoad <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLoad<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图将要出现</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewWillAppear<span class="token punctuation">:</span><span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>animated <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewWillAppear<span class="token punctuation">:</span>animated<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// view 即将布局其 Subviews</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewWillLayoutSubviews <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewWillLayoutSubviews<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// view 已经布局其 Subviews</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLayoutSubviews <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLayoutSubviews<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图已经出现</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidAppear<span class="token punctuation">:</span><span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>animated <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewDidAppear<span class="token punctuation">:</span>animated<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图将要消失</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewWillDisappear<span class="token punctuation">:</span><span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>animated <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewWillDisappear<span class="token punctuation">:</span>animated<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图已经消失</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidDisappear<span class="token punctuation">:</span><span class="token punctuation">(</span>BOOL<span class="token punctuation">)</span>animated <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> viewDidDisappear<span class="token punctuation">:</span>animated<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 出现内存警告</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>didReceiveMemoryWarning <span class="token punctuation">{</span>
+<span class="token punctuation">[</span><span class="token keyword">super</span> didReceiveMemoryWarning<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 视图被销毁</span>
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>dealloc <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre></div><br>
+### II. 方法分析
+___
+#### initWithNibName:bundle:
+初始化UIViewController，执行关键数据初始化操作，非StoryBoard创建UIViewController都会调用这个方法。
+<blockquote><p>注意: 不要在这里做View相关操作，View在loadView方法中才初始化。</p></blockquote> <h4 id="initwithcoder"><a href="#initwithcoder" class="header-anchor">#</a> initWithCoder:</h4> <p>如果使用StoryBoard进行视图管理，程序不会直接初始化一个UIViewController，StoryBoard会自动初始化或在segue被触发时自动初始化，因此方法<code>initWithNibName:bundle</code>不会被调用，但是<code>initWithCoder</code>会被调用。</p> <h4 id="awakefromnib"><a href="#awakefromnib" class="header-anchor">#</a> awakeFromNib</h4> <p>当<code>awakeFromNib</code>方法被调用时，所有视图的outlet和action已经连接，但还没有被确定，这个方法可以算作适合视图控制器的实例化配合一起使用的，因为有些需要根据用户喜好来进行设置的内容，无法存在storyBoard或xib中，所以可以在<code>awakeFromNib</code>方法中被加载进来。</p> <h4 id="loadview"><a href="#loadview" class="header-anchor">#</a> loadView</h4> <p>当执行到<code>loadView</code>方法时，如果视图控制器是通过nib创建，那么视图控制器已经从nib文件中被解档并创建好了，接下来任务就是对view进行初始化。</p> <p><code>loadView</code>方法在 UIViewController 对象的 view 被访问且为空的时候调用。这是它与<code>awakeFromNib</code>方法的一个区别。</p> <p>假设我们在处理内存警告时释放view属性：<code>self.view = nil</code>。因此<code>loadView</code>方法在视图控制器的生命周期内可能被调用多次。</p> <p><code>loadView</code> 方法不应该直接被调用，而是由系统调用，它会加载或创建一个view并把它赋值给UIViewController的view属性。</p> <p>在创建view的过程中，首先会根据nibName去找对应的nib文件然后加载。如果nibName为空或找不到对应的nib文件，则会创建一个空视图(这种情况一般是纯代码)</p> <blockquote><p>注意:在重写loadView方法的时候，不要调用父类的方法。</p></blockquote> <h4 id="viewdidload"><a href="#viewdidload" class="header-anchor">#</a> viewDidLoad</h4> <p>当loadView将view载入内存中，会进一步调用<code>viewDidLoad</code>方法来进行进一步设置。此时，视图层次已经放到内存中，通常，我们对于各种初始化数据的载入，初始设定、修改约束、移除视图等很多操作都可以这个方法中实现。</p> <h4 id="viewwillappear"><a href="#viewwillappear" class="header-anchor">#</a> viewWillAppear</h4> <p>系统在载入所有的数据后，将会在屏幕上显示视图，这时会先调用这个方法，通常我们会在这个方法对即将显示的视图做进一步的设置。比如，设置设备不同方向时该如何显示；设置状态栏方向、设置视图显示样式等。</p> <p>另一方面，当APP有多个视图时，上下级视图切换是也会调用这个方法，如果在调入视图时，需要对数据做更新，就只能在这个方法内实现。</p> <h4 id="viewwilllayoutsubviews"><a href="#viewwilllayoutsubviews" class="header-anchor">#</a> viewWillLayoutSubviews</h4> <p>view即将布局其Subviews。 比如view的bounds改变了(例如:状态栏从不显示到显示,视图方向变化)，要调整Subviews的位置，在调整之前要做的工作可以放在该方法中实现。</p> <h4 id="viewdidlayoutsubviews"><a href="#viewdidlayoutsubviews" class="header-anchor">#</a> viewDidLayoutSubviews</h4> <p>view已经布局其Subviews，这里可以放置调整完成之后需要做的工作。</p> <h4 id="viewdidappear"><a href="#viewdidappear" class="header-anchor">#</a> viewDidAppear</h4> <p>在view被添加到视图层级中以及多视图，上下级视图切换时调用这个方法，在这里可以对正在显示的视图做进一步的设置。</p> <h4 id="viewwilldisappear"><a href="#viewwilldisappear" class="header-anchor">#</a> viewWillDisappear</h4> <p>在视图切换时，当前视图在即将被移除、或被覆盖是，会调用该方法，此时还没有调用removeFromSuperview。</p> <h4 id="viewdiddisappear"><a href="#viewdiddisappear" class="header-anchor">#</a> viewDidDisappear</h4> <p>view已经消失或被覆盖，此时已经调用<code>removeFromSuperView</code>;</p> <h4 id="dealloc"><a href="#dealloc" class="header-anchor">#</a> dealloc</h4> <p>视图被销毁，此次需要对你在init和viewDidLoad中创建的对象进行释放。</p> <h4 id="didreceivememorywarning"><a href="#didreceivememorywarning" class="header-anchor">#</a> didReceiveMemoryWarning</h4> <p>在内存足够的情况下，app的视图通常会一直保存在内存中，但是如果内存不够，一些没有正在显示的<code>viewController</code>就会收到内存不足的警告，然后就会释放自己拥有的视图，以达到释放内存的目的。但是系统只会释放内存，并不会释放对象的所有权，所以通常我们需要在这里将不需要显示在内存中保留的对象释放它的所有权，将其指针置nil。</p> <hr></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ios/00基础知识/App生命周期.html" class="prev">
+        iOS开发 - APP 的生命周期
+      </a></span> <span class="next"><a href="/ios/00基础知识/mac快捷键.html">
+        iOS开发 - MAC 快捷键大全
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d6e79a92.js" defer></script><script src="/assets/js/2.618b1e05.js" defer></script><script src="/assets/js/17.c31bf76b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS开发 - 集合遍历(NSArray，NSDictionary、NSSet)方法总结 | LiCheng</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.339bfd79.css" as="style"><link rel="preload" href="/assets/js/app.d6e79a92.js" as="script"><link rel="preload" href="/assets/js/2.618b1e05.js" as="script"><link rel="preload" href="/assets/js/34.57cca84f.js" as="script"><link rel="prefetch" href="/assets/js/10.a08359a6.js"><link rel="prefetch" href="/assets/js/11.0c73a8aa.js"><link rel="prefetch" href="/assets/js/12.57403df7.js"><link rel="prefetch" href="/assets/js/13.58bd7ead.js"><link rel="prefetch" href="/assets/js/14.d01f8dab.js"><link rel="prefetch" href="/assets/js/15.17b89253.js"><link rel="prefetch" href="/assets/js/16.b83fd53a.js"><link rel="prefetch" href="/assets/js/17.c31bf76b.js"><link rel="prefetch" href="/assets/js/18.9ec5010b.js"><link rel="prefetch" href="/assets/js/19.8df7bf95.js"><link rel="prefetch" href="/assets/js/20.89bcfc28.js"><link rel="prefetch" href="/assets/js/21.e6442c6c.js"><link rel="prefetch" href="/assets/js/22.d2518ef4.js"><link rel="prefetch" href="/assets/js/23.7dc260e4.js"><link rel="prefetch" href="/assets/js/24.2578a806.js"><link rel="prefetch" href="/assets/js/25.6e62215b.js"><link rel="prefetch" href="/assets/js/26.c496238a.js"><link rel="prefetch" href="/assets/js/27.94a6caf4.js"><link rel="prefetch" href="/assets/js/28.31431aee.js"><link rel="prefetch" href="/assets/js/29.5a5d98db.js"><link rel="prefetch" href="/assets/js/3.e69c1a0c.js"><link rel="prefetch" href="/assets/js/30.05794d7d.js"><link rel="prefetch" href="/assets/js/31.4f014a3b.js"><link rel="prefetch" href="/assets/js/32.eb16534a.js"><link rel="prefetch" href="/assets/js/33.bdde09bb.js"><link rel="prefetch" href="/assets/js/35.b5f17239.js"><link rel="prefetch" href="/assets/js/4.16944ab2.js"><link rel="prefetch" href="/assets/js/5.086f51c9.js"><link rel="prefetch" href="/assets/js/6.57148270.js"><link rel="prefetch" href="/assets/js/7.3d33aabd.js"><link rel="prefetch" href="/assets/js/8.95801100.js"><link rel="prefetch" href="/assets/js/9.358c01d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.339bfd79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="LiCheng" class="logo"> <span class="site-name can-hide">LiCheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/ios/00基础知识/" class="sidebar-heading clickable"><span>基础知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/01OC知识/" class="sidebar-heading clickable open"><span>OC知识</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ios/01OC知识/对象初始化.html" class="sidebar-link">iOS开发 - 总结 Objective-C 的 self. 用法</a></li><li><a href="/ios/01OC知识/集合遍历.html" class="active sidebar-link">iOS开发 - 集合遍历(NSArray，NSDictionary、NSSet)方法总结</a></li><li><a href="/ios/01OC知识/枚举.html" class="sidebar-link">iOS开发 - 关于 枚举 的使用</a></li><li><a href="/ios/01OC知识/日期排序.html" class="sidebar-link">iOS开发 - 常见的对日期进行排序</a></li><li><a href="/ios/01OC知识/alloc和init.html" class="sidebar-link">iOS开发 - 创建对象时 alloc 和 init 的作用</a></li><li><a href="/ios/01OC知识/Copy.html" class="sidebar-link">iOS开发 - 从经典问题来看 Copy 方法</a></li><li><a href="/ios/01OC知识/load.html" class="sidebar-link">iOS开发 -  +(void)load 和 +(void)initialize 的区别</a></li><li><a href="/ios/01OC知识/NSArray排序.html" class="sidebar-link">iOS开发 - NSArray 自定义的对象进行排序</a></li><li><a href="/ios/01OC知识/Null.html" class="sidebar-link">iOS开发 - OC 中 NULL、nil、Nil、NSNull 的定义及不同</a></li><li><a href="/ios/01OC知识/valueForKeyPath.html" class="sidebar-link">iOS开发 - 关于 valueForKeyPath 的常用方法</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><hr> <blockquote><p><strong>引言:</strong>
+想到循环遍历数组、字典这些常见的集合，大家脑子里第一反应就是for循环和快速遍历，并津津乐道的传承使用着这些方法，这些已经足够满足开发中所有类似的需求，似乎没有什么需要总结的，其实不然，不信往下看，知道的大神就不要浪费时间了。</p></blockquote> <br>
+### I. for循环
+___
+Objective-C是基于C语言的，自然可以使用for循环.
+#### 遍历数组：
+```objectivec
+	NSArray *iosArray = @[@&quot;L&quot;, @&quot;O&quot;, @&quot;V&quot;, @&quot;E&quot;, @&quot;I&quot;, @&quot;O&quot;, @&quot;S&quot;];
+	for (int i = 0; i &lt; iosArray.count; i++) {
+		//处理数组中数据
+		NSLog(@&quot;%@&quot;, iosArray[i]);
+	}
+```
+遍历数组很简单没问题，下面遍历字典.
+#### 遍历字典：
+```objectivec
+	NSDictionary *dict = @{@&quot;1&quot;:@&quot;11&quot;, @&quot;2&quot;:@&quot;22&quot;, @&quot;3&quot;:@&quot;33&quot;};
+	NSArray *keysArray = [dict allKeys];
+	for (int i = 0; i &lt; keysArray.count; i++) {
+		//根据键值处理字典中的每一项
+		NSString *key = keysArray[i];
+		NSString *value = dict[key];
+		NSLog(@&quot;%@&quot;, value);
+	}
+```
+我们知道字典和set是无序的，所以我们无法根据特定的整数下标来直接访问其中的值，于是需要先获取字典中的键或者set中的所有对象，这样就可以在获取到的有序数组上进行遍历了。然而创建数组是要额外的开销的，还会多创建出一个数组对象，他会保留collection中的所有对象，占用了内存。
+<h4 id="总结优缺点："><a href="#总结优缺点：" class="header-anchor">#</a> 总结优缺点：</h4> <p>优点：被广泛使用，容易接受，操作简单；
+缺点：遍历字典和set是比较繁琐，会占用比较多的系统资源。</p> <br>
+### II.  NSEnumerator
+___
+NSEnumerator是一个抽象基类，其中定义了2个方法，使其子类实现：
+`- (nullable ObjectType)nextObject;`
+`@property (readonly, copy) NSArray*allObjects;`
+<p>其中<code>nextObject</code>是关键方法，它返回枚举里的下一个对象。每次调用改方法其，其内部结构都会更新，使得下一次调用方法时能返回下一个对象。等到枚举中全部的对象都已经返回之后，在调用就会返回<code>nil</code>，表示达到了枚举的末端。</p> <p><code>Foundation</code>框架中的<code>collection</code>都实现了这种遍历方式，例如：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>	NSArray <span class="token operator">*</span>iosArray <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">[</span><span class="token string">@&quot;L&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;V&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;E&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;I&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;S&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	NSEnumerator <span class="token operator">*</span>enumerator <span class="token operator">=</span> <span class="token punctuation">[</span>iosArray objectEnumerator<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//正向遍历</span>
+	NSEnumerator <span class="token operator">*</span>enumerator <span class="token operator">=</span> <span class="token punctuation">[</span>iosArray reverseObjectEnumerator<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//反向遍历</span>
+	id object<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>object <span class="token operator">=</span> <span class="token punctuation">[</span>enumerator nextObject<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> nil<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">//处理枚举器中的数据</span>
+		<span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@&quot;%@&quot;</span><span class="token punctuation">,</span> object<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</code></pre></div><p>字典和set实现的方式相似，不同的是字典中有key和value，要根据具体的key取出value。同时提供了正向遍历和反向遍历。</p> <h4 id="总结优缺点：-2"><a href="#总结优缺点：-2" class="header-anchor">#</a> 总结优缺点：</h4> <ul><li>优点：
+<ul><li>代码更易读，不需要定义额外的数组；</li></ul></li> <li>缺点：
+<ol><li>无法直接获取遍历操作的下标，需要另外声明变量记录；</li> <li>需要自行创建NSEnumerator对象，稍显麻烦。</li></ol></li></ul> <br>
+### III. 快速遍历
+____  
+Objective-C 2.0引入了快速遍历这一功能，快速遍历与NSEnumerator差不多，然而语法更为简洁，它为for循环开设了in关键字，简化了遍历collection所需的语法，例如:
+#### 遍历数组
+```objectivec
+	NSArray *iosArray = @[@&quot;L&quot;, @&quot;O&quot;, @&quot;V&quot;, @&quot;E&quot;, @&quot;I&quot;, @&quot;O&quot;, @&quot;S&quot;];
+	for (NSString *obj in iosArray) {
+		//处理数组中的数据
+		NSLog(@&quot;%@&quot;, obj);
+	}
+```
+#### 遍历字典
+也同样简单：
+```objectivec
+	NSDictionary *dict = @{@&quot;1&quot;:@&quot;11&quot;, @&quot;2&quot;:@&quot;22&quot;, @&quot;3&quot;:@&quot;33&quot;};
+	for (NSString *key in dict) {
+		//处理字典的键值
+		NSString *value = dict[key];
+		NSLog(@&quot;%@&quot;, value);
+	}
+```
+反向遍历可以使用:
+`for (NSString *obj in [iosArray reverseObjectEnumerator])`
+<p>####总结优缺点</p> <p>优点：
+语法简洁，使用方便，效率高；
+缺点：
+1、无法方便获取当前遍历的下标；
+2、无法在遍历过程中修改被遍历的collection，否则会导致崩溃。</p> <br>
+### IV. 基于块的遍历方式
+___
+<b style="color:red;">这才是本文的重点，也是笔者极力推荐使用的方法，苹果封装了如此高效、优雅、易用的一套接口不用多么浪费。</b>
+#### 遍历数组
+```objectivec
+	NSArray *iosArray = @[@&quot;L&quot;, @&quot;O&quot;, @&quot;V&quot;, @&quot;E&quot;, @&quot;I&quot;, @&quot;O&quot;, @&quot;S&quot;];
+	[iosArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		NSLog(@&quot;%@&quot;, obj);
+		if ([obj isEqualToString:@&quot;E&quot;]) {
+			*stop = YES;
+		}
+	}];
+```
+参数说明：
+`obj`表示数组中的元素;
+`idx`表示元素的下标;
+`stop`可以控制遍历何时停止，在需要停止时令`*stop = YES`即可（不要忘记前面的*）。
+<p>这种方法清晰明了，数组元素，下标都可直接获取，就连何时停止都很容易实现，break都可以退休了，遍历字典也同样简单。</p> <h4 id="遍历字典"><a href="#遍历字典" class="header-anchor">#</a> 遍历字典</h4> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>	NSDictionary <span class="token operator">*</span>dict <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">{</span><span class="token string">@&quot;1&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;11&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;2&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;22&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;3&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;33&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">[</span>dict enumerateKeysAndObjectsUsingBlock<span class="token punctuation">:</span><span class="token operator">^</span><span class="token punctuation">(</span>id  _Nonnull key<span class="token punctuation">,</span> id  _Nonnull obj<span class="token punctuation">,</span> BOOL <span class="token operator">*</span> _Nonnull stop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@&quot;%@&quot;</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>obj isEqualToString<span class="token punctuation">:</span><span class="token string">@&quot;22&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token operator">*</span>stop <span class="token operator">=</span> YES<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><p>你没有看错，就是这么简单，block直接把字典的key和value都给我们了，再也不用书写直白而繁琐的代码了。</p> <p><strong>注意：</strong></p> <blockquote><p>若已知collection里对象的数据类型，可以修改块签名，知道对象的精确类型后，编译器就可以检测开发者是否调用了该对象所不具有的方法，并在发现问题时报错。</p></blockquote> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>	NSDictionary <span class="token operator">*</span>dict <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">{</span><span class="token string">@&quot;1&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;11&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;2&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;22&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;3&quot;</span><span class="token punctuation">:</span><span class="token string">@&quot;33&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">[</span>dict enumerateKeysAndObjectsUsingBlock<span class="token punctuation">:</span><span class="token operator">^</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span>key<span class="token punctuation">,</span> NSString <span class="token operator">*</span>obj<span class="token punctuation">,</span> BOOL <span class="token operator">*</span> _Nonnull stop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@&quot;%@&quot;</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>obj isEqualToString<span class="token punctuation">:</span><span class="token string">@&quot;22&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token operator">*</span>stop <span class="token operator">=</span> YES<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><p>如代码，直接把key和value的类型修改成NSString类型。</p> <h4 id="反向遍历"><a href="#反向遍历" class="header-anchor">#</a> 反向遍历</h4> <p>反向遍历也同样方便，调用另外一个方法即可：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>	NSArray <span class="token operator">*</span>iosArray <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">[</span><span class="token string">@&quot;L&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;V&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;E&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;I&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;S&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">[</span>iosArray enumerateObjectsWithOptions<span class="token punctuation">:</span>NSEnumerationReverse usingBlock<span class="token punctuation">:</span><span class="token operator">^</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span>obj<span class="token punctuation">,</span> NSUInteger idx<span class="token punctuation">,</span> BOOL <span class="token operator">*</span> _Nonnull stop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@&quot;%@&quot;</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>obj isEqualToString<span class="token punctuation">:</span><span class="token string">@&quot;E&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token operator">*</span>stop <span class="token operator">=</span> YES<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><p>这个方法相对于正向遍历多了一个枚举类型的参数<code>NSEnumerationReverse</code>，打开这个选项就可以反向遍历了。</p> <h4 id="并发遍历"><a href="#并发遍历" class="header-anchor">#</a> 并发遍历</h4> <p>顺着这个枚举类型的参数，就会引出块枚举的另一大优势：并发遍历，参数是：<code>NSEnumerationConcurrent</code>，也就是可以同时遍历<code>collection</code>中的几个元素，具体数量根据系统资源而定。这样会充分利用系统资源，高效快捷的完成collection的遍历，系统底层会通过GCD来处理并发事宜，开发者不需要担心内存和线程，其他方式若要实现高效的并发遍历十分有难度。通过块枚举遍历，改变collection并不会引起崩溃，代码如下：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>	NSArray <span class="token operator">*</span>iosArray <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">[</span><span class="token string">@&quot;L&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;V&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;E&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;I&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;O&quot;</span><span class="token punctuation">,</span> <span class="token string">@&quot;S&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	NSMutableArray <span class="token operator">*</span>iosMutableArray <span class="token operator">=</span> <span class="token punctuation">[</span>NSMutableArray arrayWithArray<span class="token punctuation">:</span>iosArray<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">[</span>iosMutableArray enumerateObjectsWithOptions<span class="token punctuation">:</span>NSEnumerationConcurrent usingBlock<span class="token punctuation">:</span><span class="token operator">^</span><span class="token punctuation">(</span>NSString <span class="token operator">*</span>obj<span class="token punctuation">,</span> NSUInteger idx<span class="token punctuation">,</span> BOOL <span class="token operator">*</span> _Nonnull stop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		obj <span class="token operator">=</span> <span class="token punctuation">[</span>NSString stringWithFormat<span class="token punctuation">:</span><span class="token string">@&quot;_%@&quot;</span><span class="token punctuation">,</span> obj<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">[</span>iosMutableArray replaceObjectAtIndex<span class="token punctuation">:</span>idx withObject<span class="token punctuation">:</span>obj<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token function">NSLog</span><span class="token punctuation">(</span><span class="token string">@&quot;%@&quot;</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>obj isEqualToString<span class="token punctuation">:</span><span class="token string">@&quot;_I&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token operator">*</span>stop <span class="token operator">=</span> YES<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="优缺点总结"><a href="#优缺点总结" class="header-anchor">#</a> 优缺点总结</h4> <p><strong>优点：</strong></p> <ol><li>可以完美实现for循环的所有功能；</li> <li>可以方便获取集合中的每一项元素；</li> <li>提供了循环遍历的参数，NSEnumerationReverse用来实现倒序循环。NSEnumerationConcurrent用来实现并发遍历，两个参数可以同时使用；</li> <li>这种循环方式效率高，能够提升程序性能，开发者可以专注于业务逻辑，而不必担心内存和线程的问题；</li> <li>当开启NSEnumerationConcurrent选项时，可以实现for循环和快速遍历无法轻易实现的并发循环功能，系统底层会通过GCD处理并发事宜，这样可以充分利用系统和硬件资源，达到最优的遍历效果；</li> <li>可以修改块签名，当我们已经明确集合中的元素类型时，可以把默认的签名id类型修改成已知类型，比如常见的NSString，这样既可以节省系统资源开销，也可以防止误向对象发送不存在的方法是引起的崩溃。</li></ol> <p>**缺点: **</p> <ol><li>很多开发者不知道这种遍历方式；</li> <li>这里使用了block，需要注意在block里容易引起的保留环问题，比如使用self调用方法时，把self转化成若引用即可打破保留环。如：__weak <code>__typeof(self)weakSelf = self</code> 或者<code>__weak MyController *weakSelf = self;</code> 在block里使用weakSelf即可。</li></ol> <br>
+### V. 注意
+___
+使用基于块的遍历时是可以修改遍历的元素的，不会导致崩溃，但是如果要删除遍历的元素会导致后面的元素无法遍历而崩溃，解决办法有2种:
+- 一种是复制一份原集合的副本，对副本进行操作，找出所要操作的元素后再处理原集合；
+- 使用反向遍历，反向遍历删除元素后不会导致崩溃。
+</div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ios/01OC知识/对象初始化.html" class="prev">
+        iOS开发 - 总结 Objective-C 的 self. 用法
+      </a></span> <span class="next"><a href="/ios/01OC知识/枚举.html">
+        iOS开发 - 关于 枚举 的使用
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d6e79a92.js" defer></script><script src="/assets/js/2.618b1e05.js" defer></script><script src="/assets/js/34.57cca84f.js" defer></script>
+  </body>
+</html>

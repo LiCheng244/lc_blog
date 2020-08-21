@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS开发 - NSArray 自定义的对象进行排序 | LiCheng</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.339bfd79.css" as="style"><link rel="preload" href="/assets/js/app.d6e79a92.js" as="script"><link rel="preload" href="/assets/js/2.618b1e05.js" as="script"><link rel="preload" href="/assets/js/25.6e62215b.js" as="script"><link rel="prefetch" href="/assets/js/10.a08359a6.js"><link rel="prefetch" href="/assets/js/11.0c73a8aa.js"><link rel="prefetch" href="/assets/js/12.57403df7.js"><link rel="prefetch" href="/assets/js/13.58bd7ead.js"><link rel="prefetch" href="/assets/js/14.d01f8dab.js"><link rel="prefetch" href="/assets/js/15.17b89253.js"><link rel="prefetch" href="/assets/js/16.b83fd53a.js"><link rel="prefetch" href="/assets/js/17.c31bf76b.js"><link rel="prefetch" href="/assets/js/18.9ec5010b.js"><link rel="prefetch" href="/assets/js/19.8df7bf95.js"><link rel="prefetch" href="/assets/js/20.89bcfc28.js"><link rel="prefetch" href="/assets/js/21.e6442c6c.js"><link rel="prefetch" href="/assets/js/22.d2518ef4.js"><link rel="prefetch" href="/assets/js/23.7dc260e4.js"><link rel="prefetch" href="/assets/js/24.2578a806.js"><link rel="prefetch" href="/assets/js/26.c496238a.js"><link rel="prefetch" href="/assets/js/27.94a6caf4.js"><link rel="prefetch" href="/assets/js/28.31431aee.js"><link rel="prefetch" href="/assets/js/29.5a5d98db.js"><link rel="prefetch" href="/assets/js/3.e69c1a0c.js"><link rel="prefetch" href="/assets/js/30.05794d7d.js"><link rel="prefetch" href="/assets/js/31.4f014a3b.js"><link rel="prefetch" href="/assets/js/32.eb16534a.js"><link rel="prefetch" href="/assets/js/33.bdde09bb.js"><link rel="prefetch" href="/assets/js/34.57cca84f.js"><link rel="prefetch" href="/assets/js/35.b5f17239.js"><link rel="prefetch" href="/assets/js/4.16944ab2.js"><link rel="prefetch" href="/assets/js/5.086f51c9.js"><link rel="prefetch" href="/assets/js/6.57148270.js"><link rel="prefetch" href="/assets/js/7.3d33aabd.js"><link rel="prefetch" href="/assets/js/8.95801100.js"><link rel="prefetch" href="/assets/js/9.358c01d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.339bfd79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="LiCheng" class="logo"> <span class="site-name can-hide">LiCheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/ios/00基础知识/" class="sidebar-heading clickable"><span>基础知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/01OC知识/" class="sidebar-heading clickable open"><span>OC知识</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ios/01OC知识/对象初始化.html" class="sidebar-link">iOS开发 - 总结 Objective-C 的 self. 用法</a></li><li><a href="/ios/01OC知识/集合遍历.html" class="sidebar-link">iOS开发 - 集合遍历(NSArray，NSDictionary、NSSet)方法总结</a></li><li><a href="/ios/01OC知识/枚举.html" class="sidebar-link">iOS开发 - 关于 枚举 的使用</a></li><li><a href="/ios/01OC知识/日期排序.html" class="sidebar-link">iOS开发 - 常见的对日期进行排序</a></li><li><a href="/ios/01OC知识/alloc和init.html" class="sidebar-link">iOS开发 - 创建对象时 alloc 和 init 的作用</a></li><li><a href="/ios/01OC知识/Copy.html" class="sidebar-link">iOS开发 - 从经典问题来看 Copy 方法</a></li><li><a href="/ios/01OC知识/load.html" class="sidebar-link">iOS开发 -  +(void)load 和 +(void)initialize 的区别</a></li><li><a href="/ios/01OC知识/NSArray排序.html" class="active sidebar-link">iOS开发 - NSArray 自定义的对象进行排序</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/ios/01OC知识/Null.html" class="sidebar-link">iOS开发 - OC 中 NULL、nil、Nil、NSNull 的定义及不同</a></li><li><a href="/ios/01OC知识/valueForKeyPath.html" class="sidebar-link">iOS开发 - 关于 valueForKeyPath 的常用方法</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><hr> <blockquote><p><strong>引言:</strong></p> <p>开发的每个程序都会使用到一些数据，而这些数据一般被封装在一个自定义的类中。例如一个音乐程序可能会有一个Song类，聊天程序则又一个 Friend类，点菜程序会有一个Recipe类等。有时候我们希望在程序中显示的列表数据是按照一定顺序进行排列的，本文我们就来看看在iOS中有哪些 方法可以对NSArray中的对象进行排序。</p></blockquote> <br> <h3 id="i-准备工作"><a href="#i-准备工作" class="header-anchor">#</a> I. 准备工作</h3> <hr> <p>我们将要排序的对象是一个 <code>Persion</code> 类，如下定义：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code><span class="token keyword">@interface</span> Person <span class="token punctuation">:</span> NSObject 
+
+<span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span> copy<span class="token punctuation">)</span> NSString <span class="token operator">*</span>name<span class="token punctuation">;</span> 
+<span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span> copy<span class="token punctuation">)</span> NSString <span class="token operator">*</span>surname<span class="token punctuation">;</span> 
+<span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span> strong<span class="token punctuation">)</span> NSDate <span class="token operator">*</span>dateOfBirth<span class="token punctuation">;</span> 
+
+<span class="token keyword">@end</span>
+</code></pre></div><p>而数组中包含如下内容：</p> <div class="language- extra-class"><pre class="language-text"><code>Smith 	 John 	03/01/1984 
+Andersen Jane 	16/03/1979 
+Clark 	 Anne 	13/09/1995 
+Smith 	 David  19/07/1981 
+Johnson	 Rose 	22/02/1989
+</code></pre></div><br>
+### II. NSComparator排序
+___
+`comparator`实际上是用一个`block`对象作比较操作。它的定义如下所示：
+```objectivec
+typedef NSComparisonResult (^NSComparator)(id obj1, id obj2);
+```
+<p>上面的参数(obj1、obj2)就是我们将要做比较的对象。block返回的结果为<code>NSComparisonResult</code>类型来表示两个对象的顺序。
+要对整个数组做排序，则需要使用<code>NSArray</code>的<code>sortArrayUsingComparator:</code>方法，如下代码所示：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>
+NSArray <span class="token operator">*</span>sortedArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>persons sortedArrayUsingComparator<span class="token punctuation">:</span><span class="token operator">^</span><span class="token function">NSComparisonResult</span><span class="token punctuation">(</span>Person <span class="token operator">*</span>p1<span class="token punctuation">,</span> Person <span class="token operator">*</span>p2<span class="token punctuation">)</span><span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>p1<span class="token punctuation">.</span>surname compare<span class="token punctuation">:</span>p2<span class="token punctuation">.</span>surname<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>最终排序的结果如下所示：</p> <div class="language-objective extra-class"><pre class="language-text"><code>Andersen 	Jane 
+Clark 		Anne 
+Johnson 	Rose 
+Smith 		John 
+Smith 		David
+</code></pre></div><hr> <h3 id="iii-nsdescriptor排序"><a href="#iii-nsdescriptor排序" class="header-anchor">#</a> III. NSDescriptor排序</h3> <p><code>Sort descriptor</code>不仅可以用来对数组进行排序，还能指定 <code>element</code>在<code>table view</code>中的排序，以及<code>Core Data</code>中对<code>fetch request</code>返回的数据做排序处理。通过<code>sort descriptor</code>可以很方便的对数组进行多个key的排序。下面来看看如何对我们的数组做<code>surname</code>排序，然后在进行name排序：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>
+NSSortDescriptor <span class="token operator">*</span>firstDescriptor <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>NSSortDescriptor alloc<span class="token punctuation">]</span> initWithKey<span class="token punctuation">:</span><span class="token string">@&quot;surname&quot;</span> ascending<span class="token punctuation">:</span>YES<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+NSSortDescriptor <span class="token operator">*</span>secondDescriptor <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>NSSortDescriptor alloc<span class="token punctuation">]</span> initWithKey<span class="token punctuation">:</span><span class="token string">@&quot;name&quot;</span> ascending<span class="token punctuation">:</span>YES<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+
+NSArray <span class="token operator">*</span>sortDescriptors <span class="token operator">=</span> <span class="token punctuation">[</span>NSArray arrayWithObjects<span class="token punctuation">:</span>firstDescriptor<span class="token punctuation">,</span> secondDescriptor<span class="token punctuation">,</span> nil<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+NSArray <span class="token operator">*</span>sortedArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>persons sortedArrayUsingDescriptors<span class="token punctuation">:</span>sortDescriptors<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>上面代码的排序结果如下所示：</p> <div class="language-objectivec extra-class"><pre class="language-objectivec"><code>Andersen 	Jane 
+Clark 		Anne 
+Johnson 	Rose 
+Smith 		David 
+Smith 		John
+</code></pre></div><hr> <h3 id="iv-selector排序"><a href="#iv-selector排序" class="header-anchor">#</a> IV. selector排序</h3> <p>我们也可以定义自己的方法进行两个对象做比较，并将该方法用于数组排序。<code>comparator</code>消息会被发送到数值中的每个对象中，并携带数组中另外的一个对象当做参数。自定义的的方法的返回结果是这样的：如果本身对象小于参数中的对象，就返回<code>NSOrederedAscending</code>，相反，则返回 <code>NSOrderedDescending</code>，如果相等，那么返回<code>NSOrderedSame</code>。如下代码所示：</p> <div class="language-objetivec extra-class"><pre class="language-text"><code>
+- (NSComparisonResult)compare:(Person *)otherPerson { 
+    return [self.dateOfBirth compare:otherPerson.dateOfBirth]; 
+}
+
+</code></pre></div><hr> <p>这个方法定义在Person类中，用来对person的生日进行排序。</p> <h3 id="v-总结"><a href="#v-总结" class="header-anchor">#</a> V. 总结</h3> <p>上面所介绍的这些方法都是为了完成相同的事情：对数组做排序处理 你可能在想改选择使用哪个呢？</p> <ul><li>当需要通过多个key进行排序，那么最简单的方法就 是使用sort descriptor。</li> <li>如果比较方法很复杂的话，建议在使用外面自己的selector。</li> <li>用block作比较，可以不必使用任何的变量就能完成一个简单的比较方法，也可以定义一个复杂的block，来替换 selector。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ios/01OC知识/load.html" class="prev">
+        iOS开发 -  +(void)load 和 +(void)initialize 的区别
+      </a></span> <span class="next"><a href="/ios/01OC知识/Null.html">
+        iOS开发 - OC 中 NULL、nil、Nil、NSNull 的定义及不同
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d6e79a92.js" defer></script><script src="/assets/js/2.618b1e05.js" defer></script><script src="/assets/js/25.6e62215b.js" defer></script>
+  </body>
+</html>
