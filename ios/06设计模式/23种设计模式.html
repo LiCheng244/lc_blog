@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常见的 设计模式 | LiCheng</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.339bfd79.css" as="style"><link rel="preload" href="/assets/js/app.21980600.js" as="script"><link rel="preload" href="/assets/js/2.47e3f61a.js" as="script"><link rel="preload" href="/assets/js/11.5db019af.js" as="script"><link rel="prefetch" href="/assets/js/10.939ffed6.js"><link rel="prefetch" href="/assets/js/100.fd4f80f7.js"><link rel="prefetch" href="/assets/js/101.bc333b33.js"><link rel="prefetch" href="/assets/js/102.bf3ff262.js"><link rel="prefetch" href="/assets/js/103.0f43f424.js"><link rel="prefetch" href="/assets/js/104.e3e61864.js"><link rel="prefetch" href="/assets/js/105.c71c2cd8.js"><link rel="prefetch" href="/assets/js/106.167f5b50.js"><link rel="prefetch" href="/assets/js/107.826d382f.js"><link rel="prefetch" href="/assets/js/108.2dc75a1b.js"><link rel="prefetch" href="/assets/js/109.e9b296db.js"><link rel="prefetch" href="/assets/js/110.2f27593d.js"><link rel="prefetch" href="/assets/js/111.89f50c92.js"><link rel="prefetch" href="/assets/js/112.fa5dede4.js"><link rel="prefetch" href="/assets/js/113.5851a0ac.js"><link rel="prefetch" href="/assets/js/114.5b30976e.js"><link rel="prefetch" href="/assets/js/115.e0e1ae44.js"><link rel="prefetch" href="/assets/js/116.46ac51fa.js"><link rel="prefetch" href="/assets/js/117.85a191bf.js"><link rel="prefetch" href="/assets/js/118.bb66c599.js"><link rel="prefetch" href="/assets/js/119.74cfe432.js"><link rel="prefetch" href="/assets/js/12.c6beda56.js"><link rel="prefetch" href="/assets/js/120.c23d01e0.js"><link rel="prefetch" href="/assets/js/121.27a9d1d3.js"><link rel="prefetch" href="/assets/js/122.3e9786d2.js"><link rel="prefetch" href="/assets/js/123.63b96b5f.js"><link rel="prefetch" href="/assets/js/124.dd5f786b.js"><link rel="prefetch" href="/assets/js/125.ed387d93.js"><link rel="prefetch" href="/assets/js/126.1ebcde65.js"><link rel="prefetch" href="/assets/js/127.a7886bd6.js"><link rel="prefetch" href="/assets/js/128.34c27ecb.js"><link rel="prefetch" href="/assets/js/129.40b4ab7b.js"><link rel="prefetch" href="/assets/js/13.99580643.js"><link rel="prefetch" href="/assets/js/130.fd38c4e5.js"><link rel="prefetch" href="/assets/js/131.d849394b.js"><link rel="prefetch" href="/assets/js/132.481bf394.js"><link rel="prefetch" href="/assets/js/133.b43fcfc7.js"><link rel="prefetch" href="/assets/js/134.c19d30f0.js"><link rel="prefetch" href="/assets/js/135.e28e95b5.js"><link rel="prefetch" href="/assets/js/136.c1cc2377.js"><link rel="prefetch" href="/assets/js/137.41cd47ff.js"><link rel="prefetch" href="/assets/js/138.9bf17a4b.js"><link rel="prefetch" href="/assets/js/139.b4351a41.js"><link rel="prefetch" href="/assets/js/14.d4ad56df.js"><link rel="prefetch" href="/assets/js/140.1aa7362c.js"><link rel="prefetch" href="/assets/js/141.0481378f.js"><link rel="prefetch" href="/assets/js/142.ef1faee9.js"><link rel="prefetch" href="/assets/js/143.8874c54f.js"><link rel="prefetch" href="/assets/js/144.7791ab6b.js"><link rel="prefetch" href="/assets/js/145.0bf925a5.js"><link rel="prefetch" href="/assets/js/146.de772e96.js"><link rel="prefetch" href="/assets/js/147.4bc93b8b.js"><link rel="prefetch" href="/assets/js/148.00303584.js"><link rel="prefetch" href="/assets/js/149.9fe90d6b.js"><link rel="prefetch" href="/assets/js/15.d3d0d222.js"><link rel="prefetch" href="/assets/js/150.cae27eb6.js"><link rel="prefetch" href="/assets/js/151.09d1ee0c.js"><link rel="prefetch" href="/assets/js/152.1bdff3c1.js"><link rel="prefetch" href="/assets/js/153.3c7b17b0.js"><link rel="prefetch" href="/assets/js/16.85b24fa0.js"><link rel="prefetch" href="/assets/js/17.9e20f763.js"><link rel="prefetch" href="/assets/js/18.28093608.js"><link rel="prefetch" href="/assets/js/19.afac88ed.js"><link rel="prefetch" href="/assets/js/20.f5ac3b84.js"><link rel="prefetch" href="/assets/js/21.86ddfd42.js"><link rel="prefetch" href="/assets/js/22.137df389.js"><link rel="prefetch" href="/assets/js/23.e4f7cded.js"><link rel="prefetch" href="/assets/js/24.49d09e81.js"><link rel="prefetch" href="/assets/js/25.4f5fb7db.js"><link rel="prefetch" href="/assets/js/26.b7f87605.js"><link rel="prefetch" href="/assets/js/27.b99a36be.js"><link rel="prefetch" href="/assets/js/28.719de371.js"><link rel="prefetch" href="/assets/js/29.dfea662e.js"><link rel="prefetch" href="/assets/js/3.d644bf68.js"><link rel="prefetch" href="/assets/js/30.45059436.js"><link rel="prefetch" href="/assets/js/31.e2d7e1df.js"><link rel="prefetch" href="/assets/js/32.34e05192.js"><link rel="prefetch" href="/assets/js/33.4ce2310e.js"><link rel="prefetch" href="/assets/js/34.b9e1d387.js"><link rel="prefetch" href="/assets/js/35.a6a9db5a.js"><link rel="prefetch" href="/assets/js/36.4c2d6836.js"><link rel="prefetch" href="/assets/js/37.cebc76cd.js"><link rel="prefetch" href="/assets/js/38.fa0a75f8.js"><link rel="prefetch" href="/assets/js/39.fa1f1fac.js"><link rel="prefetch" href="/assets/js/4.6997856f.js"><link rel="prefetch" href="/assets/js/40.c26035a5.js"><link rel="prefetch" href="/assets/js/41.777c0fbb.js"><link rel="prefetch" href="/assets/js/42.adb1ec57.js"><link rel="prefetch" href="/assets/js/43.eb5c7027.js"><link rel="prefetch" href="/assets/js/44.6d104082.js"><link rel="prefetch" href="/assets/js/45.645f675e.js"><link rel="prefetch" href="/assets/js/46.cb130e27.js"><link rel="prefetch" href="/assets/js/47.8c9ca9ef.js"><link rel="prefetch" href="/assets/js/48.beb116cb.js"><link rel="prefetch" href="/assets/js/49.335f9808.js"><link rel="prefetch" href="/assets/js/5.63638546.js"><link rel="prefetch" href="/assets/js/50.4a0035bc.js"><link rel="prefetch" href="/assets/js/51.4652d6e6.js"><link rel="prefetch" href="/assets/js/52.58d0373c.js"><link rel="prefetch" href="/assets/js/53.5e4a1a29.js"><link rel="prefetch" href="/assets/js/54.dff2f8dd.js"><link rel="prefetch" href="/assets/js/55.4991f021.js"><link rel="prefetch" href="/assets/js/56.b8eddd28.js"><link rel="prefetch" href="/assets/js/57.99b1690f.js"><link rel="prefetch" href="/assets/js/58.570a1674.js"><link rel="prefetch" href="/assets/js/59.766d99d5.js"><link rel="prefetch" href="/assets/js/6.869c68af.js"><link rel="prefetch" href="/assets/js/60.e055e1f8.js"><link rel="prefetch" href="/assets/js/61.66afb3d2.js"><link rel="prefetch" href="/assets/js/62.327566b8.js"><link rel="prefetch" href="/assets/js/63.cfeb7e8f.js"><link rel="prefetch" href="/assets/js/64.68051858.js"><link rel="prefetch" href="/assets/js/65.33d87bf9.js"><link rel="prefetch" href="/assets/js/66.3f24f52a.js"><link rel="prefetch" href="/assets/js/67.e0758b8c.js"><link rel="prefetch" href="/assets/js/68.b57be8ee.js"><link rel="prefetch" href="/assets/js/69.5183948d.js"><link rel="prefetch" href="/assets/js/7.59e2beaf.js"><link rel="prefetch" href="/assets/js/70.0f157687.js"><link rel="prefetch" href="/assets/js/71.0769c6ce.js"><link rel="prefetch" href="/assets/js/72.6dc85180.js"><link rel="prefetch" href="/assets/js/73.4f280a83.js"><link rel="prefetch" href="/assets/js/74.348b993a.js"><link rel="prefetch" href="/assets/js/75.90420df6.js"><link rel="prefetch" href="/assets/js/76.170074a5.js"><link rel="prefetch" href="/assets/js/77.9970229c.js"><link rel="prefetch" href="/assets/js/78.f7f88629.js"><link rel="prefetch" href="/assets/js/79.5fb903e6.js"><link rel="prefetch" href="/assets/js/8.4c6d6607.js"><link rel="prefetch" href="/assets/js/80.db49ea87.js"><link rel="prefetch" href="/assets/js/81.3407b390.js"><link rel="prefetch" href="/assets/js/82.0659e332.js"><link rel="prefetch" href="/assets/js/83.eadc557a.js"><link rel="prefetch" href="/assets/js/84.ce59f9f0.js"><link rel="prefetch" href="/assets/js/85.4d64493f.js"><link rel="prefetch" href="/assets/js/86.177b5ba8.js"><link rel="prefetch" href="/assets/js/87.76872ad0.js"><link rel="prefetch" href="/assets/js/88.90eb6996.js"><link rel="prefetch" href="/assets/js/89.adab7474.js"><link rel="prefetch" href="/assets/js/9.0d05444b.js"><link rel="prefetch" href="/assets/js/90.6eb017cb.js"><link rel="prefetch" href="/assets/js/91.a38192fa.js"><link rel="prefetch" href="/assets/js/92.a120dc6d.js"><link rel="prefetch" href="/assets/js/93.976c8417.js"><link rel="prefetch" href="/assets/js/94.4f557b8e.js"><link rel="prefetch" href="/assets/js/95.1f0018f0.js"><link rel="prefetch" href="/assets/js/96.9bae82fd.js"><link rel="prefetch" href="/assets/js/97.342f4d39.js"><link rel="prefetch" href="/assets/js/98.c54594de.js"><link rel="prefetch" href="/assets/js/99.7a505c33.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.339bfd79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="LiCheng" class="logo"> <span class="site-name can-hide">LiCheng</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/ios/" class="nav-link router-link-active">
+  iOS
+</a></div><div class="nav-item"><a href="/game/" class="nav-link">
+  Game
+</a></div><div class="nav-item"><a href="https://github.com/LiCheng244/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/ios/00基础知识/" class="sidebar-heading clickable"><span>基础知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/01OC知识/" class="sidebar-heading clickable"><span>OC知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/02UI知识/" class="sidebar-heading clickable"><span>UI知识</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/03数据存储/" class="sidebar-heading clickable"><span>数据存储</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/04网络/" class="sidebar-heading clickable"><span>网络</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/05多线程/" class="sidebar-heading clickable"><span>多线程</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/06设计模式/" class="sidebar-heading clickable open"><span>设计模式</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ios/06设计模式/23种设计模式.html" class="active sidebar-link">常见的 设计模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ios/06设计模式/23种设计模式.html#i-创建型模式" class="sidebar-link">I. 创建型模式</a></li><li class="sidebar-sub-header"><a href="/ios/06设计模式/23种设计模式.html#ii-结构型模式" class="sidebar-link">II 结构型模式</a></li><li class="sidebar-sub-header"><a href="/ios/06设计模式/23种设计模式.html#iii-行为型模式" class="sidebar-link">III. 行为型模式</a></li></ul></li><li><a href="/ios/06设计模式/被神化的MVVM.html" class="sidebar-link">被神化的【MVVM 模式】</a></li><li><a href="/ios/06设计模式/被误解的MVC.html" class="sidebar-link">被误解的【MVC 模式】</a></li><li><a href="/ios/06设计模式/代理模式.html" class="sidebar-link">关于【代理模式】</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/07支付相关/" class="sidebar-heading clickable"><span>支付相关</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/08动画绘图/" class="sidebar-heading clickable"><span>动画绘图</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/09性能优化/" class="sidebar-heading clickable"><span>性能优化</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/10高级技术/" class="sidebar-heading clickable"><span>高级技术</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/11项目配置/" class="sidebar-heading clickable"><span>项目配置</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/12错误收集/" class="sidebar-heading clickable"><span>错误收集</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/13第三方库/" class="sidebar-heading clickable"><span>第三方库</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/14多媒体/" class="sidebar-heading clickable"><span>多媒体</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/15功能封装/" class="sidebar-heading clickable"><span>功能封装</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/16混合开发/" class="sidebar-heading clickable"><span>混合开发</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/17系统适配/" class="sidebar-heading clickable"><span>系统适配</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/18项目总结/" class="sidebar-heading clickable"><span>项目总结</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/19安全攻防/" class="sidebar-heading clickable"><span>安全攻防</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/20开发工具/" class="sidebar-heading clickable"><span>开发工具</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/ios/21%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/" class="sidebar-link">产品设计</a></li><li><a href="/ios/22Swift%E5%BC%80%E5%8F%91/" class="sidebar-link">Swift开发</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/ios/23面试题/" class="sidebar-heading clickable"><span>面试题</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1>常见的 设计模式</h1> <div class="custom-block tip"><p class="custom-block-title">引言:</p></div> <br> <h2 id="i-创建型模式"><a href="#i-创建型模式" class="header-anchor">#</a> I. 创建型模式</h2> <p><img src="/assets/img/18120501.c9990254.png" alt=""></p> <h3 id="_1-工厂模式"><a href="#_1-工厂模式" class="header-anchor">#</a> 1. 工厂模式</h3> <blockquote><p>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p></blockquote> <p><strong><code>意图：</code></strong></p> <p>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。</p> <p><strong><code>主要解决：</code></strong></p> <p>主要解决接口选择的问题。</p> <p><strong><code>何时使用：</code></strong></p> <p>我们明确地计划不同条件下创建不同实例时。</p> <p><strong><code>如何解决：</code></strong></p> <p>让其子类实现工厂接口，返回的也是一个抽象的产品。</p> <p><strong><code>关键代码：</code></strong></p> <p>创建过程在其子类执行。</p> <p><strong><code>应用实例：</code></strong></p> <ol><li>您需要一辆汽车，可以直接从工厂里面提货，而不用去管这辆汽车是怎么做出来的，以及这个汽车里面的具体实现。</li> <li>Hibernate 换数据库只需换方言和驱动就可以。</li></ol> <p><strong><code>优点：</code></strong></p> <ol><li>一个调用者想创建一个对象，只要知道其名称就可以了。</li> <li>扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。</li> <li>屏蔽产品的具体实现，调用者只关心产品的接口。</li></ol> <p><strong><code>缺点：</code></strong></p> <p>每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。这并不是什么好事。</p> <p><strong><code>使用场景：</code></strong></p> <ol><li>日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。</li> <li>数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。</li> <li>设计一个连接服务器的框架，需要三个协议，&quot;POP3&quot;、&quot;IMAP&quot;、&quot;HTTP&quot;，可以把这三个作为产品类，共同实现一个接口。</li></ol> <p><strong><code>注意事项：</code></strong></p> <p>作为一种创建类模式，在任何需要生成复杂对象的地方，都可以使用工厂方法模式。有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new 就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度。</p> <h3 id="_2-抽象工厂模式"><a href="#_2-抽象工厂模式" class="header-anchor">#</a> 2. 抽象工厂模式</h3> <blockquote><p>抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。</p></blockquote> <p><strong><code>意图：</code></strong></p> <p>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p> <p><strong><code>主要解决：</code></strong></p> <p>主要解决接口选择的问题。</p> <p><strong><code>何时使用：</code></strong></p> <p>系统的产品有多于一个的产品族，而系统只消费其中某一族的产品。</p> <p><strong><code>如何解决：</code></strong></p> <p>在一个产品族里面，定义多个产品。</p> <p><strong><code>关键代码：</code></strong></p> <p>在一个工厂里聚合多个同类产品。</p> <p><strong><code>应用实例：</code></strong></p> <p>工作了，为了参加一些聚会，肯定有两套或多套衣服吧，比如说有商务装（成套，一系列具体产品）、时尚装（成套，一系列具体产品），甚至对于一个家庭来说，可能有商务女装、商务男装、时尚女装、时尚男装，这些也都是成套的，即一系列具体产品。假设一种情况（现实中是不存在的，要不然，没法进入共产主义了，但有利于说明抽象工厂模式），在您的家中，某一个衣柜（具体工厂）只能存放某一种这样的衣服（成套，一系列具体产品），每次拿这种成套的衣服时也自然要从这个衣柜中取出了。用 OO 的思想去理解，所有的衣柜（具体工厂）都是衣柜类的（抽象工厂）某一个，而每一件成套的衣服又包括具体的上衣（某一具体产品），裤子（某一具体产品），这些具体的上衣其实也都是上衣（抽象产品），具体的裤子也都是裤子（另一个抽象产品）。</p> <p><strong><code>优点：</code></strong></p> <p>当一个产品族中的多个对象被设计成一起工作时，它能保证客户端始终只使用同一个产品族中的对象。</p> <p><strong><code>缺点：</code></strong></p> <p>产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，又要在具体的里面加代码。</p> <p><strong><code>使用场景：</code></strong></p> <ol><li>QQ 换皮肤，一整套一起换。</li> <li>生成不同操作系统的程序。</li></ol> <p><strong><code>注意事项：</code></strong></p> <p>产品族难扩展，产品等级易扩展。</p> <h3 id="_3-单例模式"><a href="#_3-单例模式" class="header-anchor">#</a> 3. 单例模式</h3> <blockquote><p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p></blockquote> <p><strong><code>注意：</code></strong></p> <ol><li>单例类只能有一个实例。</li> <li>单例类必须自己创建自己的唯一实例。</li> <li>单例类必须给所有其他对象提供这一实例。</li></ol> <p><strong><code>意图：</code></strong></p> <p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p> <p><strong><code>主要解决：</code></strong></p> <p>一个全局使用的类频繁地创建与销毁。</p> <p><strong><code>何时使用：</code></strong></p> <p>当您想控制实例数目，节省系统资源的时候。</p> <p><strong><code>如何解决：</code></strong></p> <p>判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p> <p><strong><code>关键代码：</code></strong></p> <p>构造函数是私有的。</p> <p><strong><code>应用实例：</code></strong></p> <ol><li>一个党只能有一个主席。</li> <li>Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。</li> <li>一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</li></ol> <p><strong><code>优点：</code></strong></p> <ol><li>在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。</li> <li>避免对资源的多重占用（比如写文件操作）。</li></ol> <p><strong><code>缺点：</code></strong></p> <p>没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。</p> <p><strong><code>使用场景：</code></strong></p> <ol><li>要求生产唯一序列号。</li> <li>WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。</li> <li>创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</li></ol> <p><strong><code>注意事项：</code></strong></p> <p>getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。</p> <h3 id="_4-建造者模式（构建者模式）"><a href="#_4-建造者模式（构建者模式）" class="header-anchor">#</a> 4. 建造者模式（构建者模式）</h3> <blockquote><p>建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。</p></blockquote> <p><strong><code>意图：</code></strong>
+将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。</p> <p><strong><code>主要解决：</code></strong>
+主要解决在软件系统中，有时候面临着&quot;一个复杂对象&quot;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。</p> <p><strong><code>何时使用：</code></strong>
+一些基本部件不会变，而其组合经常变化的时候。</p> <p><strong><code>如何解决：</code></strong>
+将变与不变分离开。</p> <p><strong><code>关键代码：</code></strong>
+建造者：创建和提供实例
+导演：管理建造出来的实例的依赖关系。</p> <p><strong><code>应用实例：</code></strong>
+1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&quot;套餐&quot;。
+2、JAVA 中的 StringBuilder。</p> <p><strong><code>优点：</code></strong>
+1、建造者独立，易扩展。
+2、便于控制细节风险。</p> <p><strong><code>缺点：</code></strong><br>
+1、产品必须有共同点，范围有限制。
+2、如内部变化复杂，会有很多的建造类。</p> <p><strong><code>使用场景：</code></strong><br>
+1、需要生成的对象具有复杂的内部结构。
+2、需要生成的对象内部属性本身相互依赖。</p> <p><strong><code>注意事项：</code></strong>
+与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。</p> <h3 id="_5-原型模式"><a href="#_5-原型模式" class="header-anchor">#</a> 5. 原型模式</h3> <blockquote><p>原型模式（Prototype Pattern）是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+这种模式是实现了一个原型接口，该接口用于创建当前对象的克隆。当直接创建对象的代价比较大时，则采用这种模式。例如，一个对象需要在一个高代价的数据库操作之后被创建。我们可以缓存该对象，在下一个请求时返回它的克隆，在需要的时候更新数据库，以此来减少数据库调用。</p></blockquote> <p><strong><code>意图：</code></strong>
+用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</p> <p><strong><code>主要解决：</code></strong>
+在运行期建立和删除原型。</p> <p><strong><code>何时使用：</code></strong>
+1、当一个系统应该独立于它的产品创建，构成和表示时。
+2、当要实例化的类是在运行时刻指定时，例如，通过动态装载。
+3、为了避免创建一个与产品类层次平行的工厂类层次时。
+4、当一个类的实例只能有几个不同状态组合中的一种时。建立相应数目的原型并克隆它们可能比每次用合适的状态手工实例化该类更方便一些。</p> <p><strong><code>如何解决：</code></strong>
+利用已有的一个原型对象，快速地生成和原型对象一样的实例。</p> <p><strong><code>关键代码：</code></strong>
+1、实现克隆操作，在 JAVA 继承 Cloneable，重写 clone()，在 .NET 中可以使用 Object 类的 MemberwiseClone() 方法来实现对象的浅拷贝或通过序列化的方式来实现深拷贝。
+2、原型模式同样用于隔离类对象的使用者和具体类型（易变类）之间的耦合关系，它同样要求这些&quot;易变类&quot;拥有稳定的接口。</p> <p><strong><code>应用实例：</code></strong>
+1、细胞分裂。
+2、JAVA 中的 Object clone() 方法。</p> <p><strong><code>优点：</code></strong>
+1、性能提高。
+2、逃避构造函数的约束。</p> <p><strong><code>缺点：</code></strong>
+1、配备克隆方法需要对类的功能进行通盘考虑，这对于全新的类不是很难，但对于已有的类不一定很容易，特别当一个类引用不支持串行化的间接对象，或者引用含有循环结构的时候。
+2、必须实现 Cloneable 接口。</p> <p><strong><code>使用场景：</code></strong>
+1、资源优化场景。
+2、类初始化需要消化非常多的资源，这个资源包括数据、硬件资源等。
+3、性能和安全要求的场景。
+4、通过 new 产生一个对象需要非常繁琐的数据准备或访问权限，则可以使用原型模式。
+5、一个对象多个修改者的场景。
+6、一个对象需要提供给其他对象访问，而且各个调用者可能都需要修改其值时，可以考虑使用原型模式拷贝多个对象供调用者使用。
+7、在实际项目中，原型模式很少单独出现，一般是和工厂方法模式一起出现，通过 clone 的方法创建一个对象，然后由工厂方法提供给调用者。原型模式已经与 Java 融为浑然一体，大家可以随手拿来使用。</p> <p><strong><code>注意事项：</code></strong>
+与通过对一个类进行实例化来构造新对象不同的是，原型模式是通过拷贝一个现有对象生成新对象的。浅拷贝实现 Cloneable，重写，深拷贝是通过实现 Serializable 读取二进制流。</p> <br> <h2 id="ii-结构型模式"><a href="#ii-结构型模式" class="header-anchor">#</a> II 结构型模式</h2> <p><img src="/assets/img/18120500.b65a1910.png" alt=""></p> <h3 id="_1-适配器模式"><a href="#_1-适配器模式" class="header-anchor">#</a> 1. 适配器模式</h3> <blockquote><p>适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。
+这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。
+我们通过下面的实例来演示适配器模式的使用。其中，音频播放器设备只能播放 mp3 文件，通过使用一个更高级的音频播放器来播放 vlc 和 mp4 文件。</p></blockquote> <p><strong><code>意图：</code></strong>
+将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p> <p><strong><code>主要解决：</code></strong>
+主要解决在软件系统中，常常要将一些&quot;现存的对象&quot;放到新的环境中，而新环境要求的接口是现对象不能满足的。</p> <p><strong><code>何时使用：</code></strong>
+1、系统需要使用现有的类，而此类的接口不符合系统的需要。
+2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。
+3、通过接口转换，将一个类插入另一个类系中。（比如老虎和飞禽，现在多了一个飞虎，在不增加实体的需求下，增加一个适配器，在里面包容一个虎对象，实现飞的接口。）</p> <p><strong><code>如何解决：</code></strong>
+继承或依赖（推荐）。</p> <p><strong><code>关键代码：</code></strong>
+适配器继承或依赖已有的对象，实现想要的目标接口。</p> <p><strong><code>应用实例：</code></strong><br>
+1、美国电器 110V，中国 220V，就要有一个适配器将 110V 转化为 220V。
+2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。
+3、在 LINUX 上运行 WINDOWS 程序。 4、JAVA 中的 jdbc。</p> <p><strong><code>优点：</code></strong><br>
+1、可以让任何两个没有关联的类一起运行。
+2、提高了类的复用。
+3、增加了类的透明度。
+4、灵活性好。</p> <p><strong><code>缺点：</code></strong><br>
+1、过多地使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。
+2.由于 JAVA 至多继承一个类，所以至多只能适配一个适配者类，而且目标类必须是抽象类。</p> <p><strong><code>使用场景：</code></strong>
+有动机地修改一个正常运行的系统的接口，这时应该考虑使用适配器模式。</p> <p><strong><code>注意事项：</code></strong>
+适配器不是在详细设计时添加的，而是解决正在服役的项目的问题。</p> <h3 id="_2-装饰器模式"><a href="#_2-装饰器模式" class="header-anchor">#</a> 2. 装饰器模式</h3> <blockquote><p>装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。</p></blockquote> <p><strong><code>意图：</code></strong>
+动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。</p> <p><strong><code>主要解决：</code></strong>
+一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。</p> <p><strong><code>何时使用：</code></strong>
+在不想增加很多子类的情况下扩展类。</p> <p><strong><code>如何解决：</code></strong>
+将具体功能职责划分，同时继承装饰者模式。</p> <p><strong><code>关键代码：</code></strong>
+1、Component 类充当抽象角色，不应该具体实现。
+2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。</p> <p><strong><code>应用实例：</code></strong>
+1、孙悟空有 72 变，当他变成&quot;庙宇&quot;后，他的根本还是一只猴子，但是他又有了庙宇的功能。
+2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。</p> <p><strong><code>优点：</code></strong>
+装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。</p> <p><strong><code>缺点：</code></strong>
+多层装饰比较复杂。</p> <p><strong><code>使用场景：</code></strong>
+1、扩展一个类的功能。
+2、动态增加功能，动态撤销。</p> <p><strong><code>注意事项：</code></strong>
+可代替继承。</p> <h3 id="_3-代理模式"><a href="#_3-代理模式" class="header-anchor">#</a> 3. 代理模式</h3> <blockquote><p>在代理模式（Proxy Pattern）中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。
+在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。</p></blockquote> <p><strong><code>意图：</code></strong>
+为其他对象提供一种代理以控制对这个对象的访问。</p> <p><strong><code>主要解决：</code></strong>
+在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。</p> <p><strong><code>何时使用：</code></strong>
+想在访问一个类时做一些控制。</p> <p><strong><code>如何解决：</code></strong>
+增加中间层。</p> <p><strong><code>关键代码：</code></strong>
+实现与被代理类组合。</p> <p><strong><code>应用实例：</code></strong>
+1、Windows 里面的快捷方式。
+2、猪八戒去找高翠兰结果是孙悟空变的，可以这样理解：把高翠兰的外貌抽象出来，高翠兰本人和孙悟空都实现了这个接口，猪八戒访问高翠兰的时候看不出来这个是孙悟空，所以说孙悟空是高翠兰代理类。
+3、买火车票不一定在火车站买，也可以去代售点。
+4、一张支票或银行存单是账户中资金的代理。支票在市场交易中用来代替现金，并提供对签发人账号上资金的控制。
+5、spring aop。</p> <p><strong><code>优点：</code></strong>
+1、职责清晰。
+2、高扩展性。
+3、智能化。</p> <p><strong><code>缺点：</code></strong>
+1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。
+2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</p> <p><strong><code>使用场景：</code></strong>
+按职责来划分，通常有以下使用场景：
+1、远程代理。
+2、虚拟代理。
+3、Copy-on-Write 代理。
+4、保护（Protect or Access）代理。
+5、Cache代理。
+6、防火墙（Firewall）代理。
+7、同步化（Synchronization）代理。
+8、智能引用（Smart Reference）代理。</p> <p><strong><code>注意事项：</code></strong>
+1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。
+2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。</p> <h3 id="_4-外观模式"><a href="#_4-外观模式" class="header-anchor">#</a> 4. 外观模式</h3> <blockquote><p>外观模式（Facade Pattern）隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口。这种类型的设计模式属于结构型模式，它向现有的系统添加一个接口，来隐藏系统的复杂性。
+这种模式涉及到一个单一的类，该类提供了客户端请求的简化方法和对现有系统类方法的委托调用。</p></blockquote> <p><strong><code>意图：</code></strong>
+为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p> <p><strong><code>主要解决：</code></strong>
+降低访问复杂系统的内部子系统时的复杂度，简化客户端与之的接口。</p> <p><strong><code>何时使用：</code></strong>
+1、客户端不需要知道系统内部的复杂联系，整个系统只需提供一个&quot;接待员&quot;即可。
+2、定义系统的入口。</p> <p><strong><code>如何解决：</code></strong>
+客户端不与系统耦合，外观类与系统耦合。</p> <p><strong><code>关键代码：</code></strong>
+在客户端和复杂系统之间再加一层，这一层将调用顺序、依赖关系等处理好。</p> <p><strong><code>应用实例：</code></strong>
+1、去医院看病，可能要去挂号、门诊、划价、取药，让患者或患者家属觉得很复杂，如果有提供接待人员，只让接待人员来处理，就很方便。
+2、JAVA 的三层开发模式。</p> <p><strong><code>优点：</code></strong>
+1、减少系统相互依赖。
+2、提高灵活性。
+3、提高了安全性。</p> <p><strong><code>缺点：</code></strong>
+不符合开闭原则，如果要改东西很麻烦，继承重写都不合适。</p> <p><strong><code>使用场景：</code></strong>
+1、为复杂的模块或子系统提供外界访问的模块。
+2、子系统相对独立。
+3、预防低水平人员带来的风险。</p> <p><strong><code>注意事项：</code></strong>
+在层次化结构中，可以使用外观模式定义系统中每一层的入口。</p> <h3 id="_5-桥接模式"><a href="#_5-桥接模式" class="header-anchor">#</a> 5. 桥接模式</h3> <blockquote><p>桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。
+这种模式涉及到一个作为桥接的接口，使得实体类的功能独立于接口实现类。这两种类型的类可被结构化改变而互不影响。
+我们通过下面的实例来演示桥接模式（Bridge Pattern）的用法。其中，可以使用相同的抽象类方法但是不同的桥接实现类，来画出不同颜色的圆。</p></blockquote> <p><strong><code>意图：</code></strong>
+将抽象部分与实现部分分离，使它们都可以独立的变化。</p> <p><strong><code>主要解决：</code></strong>
+在有多种可能会变化的情况下，用继承会造成类爆炸问题，扩展起来不灵活。</p> <p><strong><code>何时使用：</code></strong>
+实现系统可能有多个角度分类，每一种角度都可能变化。</p> <p><strong><code>如何解决：</code></strong>
+把这种多角度分类分离出来，让它们独立变化，减少它们之间耦合。</p> <p><strong><code>关键代码：</code></strong>
+抽象类依赖实现类。</p> <p><strong><code>应用实例：</code></strong>
+1、猪八戒从天蓬元帅转世投胎到猪，转世投胎的机制将尘世划分为两个等级，即：灵魂和肉体，前者相当于抽象化，后者相当于实现化。生灵通过功能的委派，调用肉体对象的功能，使得生灵可以动态地选择。
+2、墙上的开关，可以看到的开关是抽象的，不用管里面具体怎么实现的。</p> <p><strong><code>优点：</code></strong>
+1、抽象和实现的分离。
+2、优秀的扩展能力。
+3、实现细节对客户透明。</p> <p><strong><code>缺点：</code></strong>
+桥接模式的引入会增加系统的理解与设计难度，由于聚合关联关系建立在抽象层，要求开发者针对抽象进行设计与编程。</p> <p><strong><code>使用场景：</code></strong>
+1、如果一个系统需要在构件的抽象化角色和具体化角色之间增加更多的灵活性，避免在两个层次之间建立静态的继承联系，通过桥接模式可以使它们在抽象层建立一个关联关系。
+2、对于那些不希望使用继承或因为多层次继承导致系统类的个数急剧增加的系统，桥接模式尤为适用。
+3、一个类存在两个独立变化的维度，且这两个维度都需要进行扩展。</p> <p><strong><code>注意事项：</code></strong>
+对于两个独立变化的维度，使用桥接模式再适合不过了。</p> <h3 id="_6-组合模式"><a href="#_6-组合模式" class="header-anchor">#</a> 6. 组合模式</h3> <blockquote><p>组合模式（Composite Pattern），又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
+这种模式创建了一个包含自己对象组的类。该类提供了修改相同对象组的方式。
+我们通过下面的实例来演示组合模式的用法。实例演示了一个组织中员工的层次结构。</p></blockquote> <p><strong><code>意图：</code></strong>
+将对象组合成树形结构以表示&quot;部分-整体&quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。</p> <p><strong><code>主要解决：</code></strong>
+它在我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素，从而使得客户程序与复杂元素的内部结构解耦。</p> <p><strong><code>何时使用：</code></strong>
+1、您想表示对象的部分-整体层次结构（树形结构）。
+2、您希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</p> <p><strong><code>如何解决：</code></strong>
+树枝和叶子实现统一接口，树枝内部组合该接口。</p> <p><strong><code>关键代码：</code></strong>
+树枝内部组合该接口，并且含有内部属性 List，里面放 Component。</p> <p><strong><code>应用实例：</code></strong>
+1、算术表达式包括操作数、操作符和另一个操作数，其中，另一个操作符也可以是操作数、操作符和另一个操作数。
+2、在 JAVA AWT 和 SWING 中，对于 Button 和 Checkbox 是树叶，Container 是树枝。</p> <p><strong><code>优点：</code></strong>
+1、高层模块调用简单。
+2、节点自由增加。</p> <p><strong><code>缺点：</code></strong>
+在使用组合模式时，其叶子和树枝的声明都是实现类，而不是接口，违反了依赖倒置原则。</p> <p><strong><code>使用场景：</code></strong>
+部分、整体场景，如树形菜单，文件、文件夹的管理。</p> <p><strong><code>注意事项：</code></strong>
+定义时为具体类。</p> <h3 id="_7-享元模式"><a href="#_7-享元模式" class="header-anchor">#</a> 7. 享元模式</h3> <blockquote><p>享元模式（Flyweight Pattern）主要用于减少创建对象的数量，以减少内存占用和提高性能。这种类型的设计模式属于结构型模式，它提供了减少对象数量从而改善应用所需的对象结构的方式。
+享元模式尝试重用现有的同类对象，如果未找到匹配的对象，则创建新对象。我们将通过创建 5 个对象来画出 20 个分布于不同位置的圆来演示这种模式。由于只有 5 种可用的颜色，所以 color 属性被用来检查现有的 Circle 对象。</p></blockquote> <p><strong><code>意图：</code></strong>
+运用共享技术有效地支持大量细粒度的对象。</p> <p><strong><code>主要解决：</code></strong>
+在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建。</p> <p><strong><code>何时使用：</code></strong>
+1、系统中有大量对象。
+2、这些对象消耗大量内存。
+3、这些对象的状态大部分可以外部化。
+4、这些对象可以按照内蕴状态分为很多组，当把外蕴对象从对象中剔除出来时，每一组对象都可以用一个对象来代替。
+5、系统不依赖于这些对象身份，这些对象是不可分辨的。</p> <p><strong><code>如何解决：</code></strong>
+用唯一标识码判断，如果在内存中有，则返回这个唯一标识码所标识的对象。</p> <p><strong><code>关键代码：</code></strong>
+用 HashMap 存储这些对象。</p> <p><strong><code>应用实例：</code></strong>
+1、JAVA 中的 String，如果有则返回，如果没有则创建一个字符串保存在字符串缓存池里面。
+2、数据库的数据池。</p> <p><strong><code>优点：</code></strong>
+大大减少对象的创建，降低系统的内存，使效率提高。</p> <p><strong><code>缺点：</code></strong>
+提高了系统的复杂度，需要分离出外部状态和内部状态，而且外部状态具有固有化的性质，不应该随着内部状态的变化而变化，否则会造成系统的混乱。</p> <p><strong><code>使用场景：</code></strong>
+1、系统有大量相似对象。
+2、需要缓冲池的场景。</p> <p><strong><code>注意事项：</code></strong>
+1、注意划分外部状态和内部状态，否则可能会引起线程安全问题。
+2、这些类必须有一个工厂对象加以控制。</p> <br> <h2 id="iii-行为型模式"><a href="#iii-行为型模式" class="header-anchor">#</a> III. 行为型模式</h2> <p><img src="/assets/img/18120502.a3a0aa96.png" alt=""></p> <h3 id="_1-策略模式"><a href="#_1-策略模式" class="header-anchor">#</a> 1. 策略模式</h3> <blockquote><p>在策略模式（Strategy Pattern）中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。
+在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。</p></blockquote> <p><strong><code>意图：</code></strong>
+定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p> <p><strong><code>主要解决：</code></strong>
+在有多种算法相似的情况下，使用 if...else 所带来的复杂和难以维护。</p> <p><strong><code>何时使用：</code></strong>
+一个系统有许多许多类，而区分它们的只是他们直接的行为。</p> <p><strong><code>如何解决：</code></strong>
+将这些算法封装成一个一个的类，任意地替换。</p> <p><strong><code>关键代码：</code></strong>
+实现同一个接口。</p> <p><strong><code>应用实例：</code></strong><br>
+1、诸葛亮的锦囊妙计，每一个锦囊就是一个策略。
+2、旅行的出游方式，选择骑自行车、坐汽车，每一种旅行方式都是一个策略。
+3、JAVA AWT 中的 LayoutManager。</p> <p><strong><code>优点：</code></strong><br>
+1、算法可以自由切换。
+2、避免使用多重条件判断。
+3、扩展性良好。</p> <p><strong><code>缺点：</code></strong><br>
+1、策略类会增多。
+2、所有策略类都需要对外暴露。</p> <p><strong><code>使用场景：</code></strong><br>
+1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。
+2、一个系统需要动态地在几种算法中选择一种。
+3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</p> <p><strong><code>注意事项：</code></strong>
+如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。</p> <h3 id="_2-模板模式"><a href="#_2-模板模式" class="header-anchor">#</a> 2. 模板模式</h3> <blockquote><p>在模板模式（Template Pattern）中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。</p></blockquote> <p><strong><code>意图：</code></strong>
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</p> <p><strong><code>主要解决：</code></strong>
+一些方法通用，却在每一个子类都重新写了这一方法。</p> <p><strong><code>何时使用：</code></strong>
+有一些通用的方法。</p> <p><strong><code>如何解决：</code></strong>
+将这些通用算法抽象出来。</p> <p><strong><code>关键代码：</code></strong>
+在抽象类实现，其他步骤在子类实现。</p> <p><strong><code>应用实例：</code></strong><br>
+1、在造房子的时候，地基、走线、水管都一样，只有在建筑的后期才有加壁橱加栅栏等差异。
+2、西游记里面菩萨定好的 81 难，这就是一个顶层的逻辑骨架。
+3、spring 中对 Hibernate 的支持，将一些已经定好的方法封装起来，比如开启事务、获取 Session、关闭 Session 等，程序员不重复写那些已经规范好的代码，直接丢一个实体就可以保存。</p> <p><strong><code>优点：</code></strong><br>
+1、封装不变部分，扩展可变部分。
+2、提取公共代码，便于维护。
+3、行为由父类控制，子类实现。</p> <p><strong><code>缺点：</code></strong>
+每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。</p> <p><strong><code>使用场景：</code></strong><br>
+1、有多个子类共有的方法，且逻辑相同。
+2、重要的、复杂的方法，可以考虑作为模板方法。</p> <p><strong><code>注意事项：</code></strong>
+为防止恶意操作，一般模板方法都加上 final 关键词。</p> <h3 id="_3-观察者模式"><a href="#_3-观察者模式" class="header-anchor">#</a> 3. 观察者模式</h3> <blockquote><p>当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。</p></blockquote> <p><strong><code>意图：</code></strong>
+定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p> <p><strong><code>主要解决：</code></strong>
+一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。</p> <p><strong><code>何时使用：</code></strong>
+一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。</p> <p><strong><code>如何解决：</code></strong>
+使用面向对象技术，可以将这种依赖关系弱化。</p> <p><strong><code>关键代码：</code></strong>
+在抽象类里有一个 ArrayList 存放观察者们。</p> <p><strong><code>应用实例</code></strong>
+1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。
+2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。</p> <p><strong><code>优点：</code></strong>
+1、观察者和被观察者是抽象耦合的。
+2、建立一套触发机制。</p> <p><strong><code>缺点：</code></strong>
+1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。
+2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。
+3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。</p> <p><strong><code>使用场景：</code></strong>
+一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。
+一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。
+一个对象必须通知其他对象，而并不知道这些对象是谁。需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。</p> <p><strong><code>注意事项：</code></strong>
+1、JAVA 中已经有了对观察者模式的支持类。
+2、避免循环引用。
+3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。</p> <h3 id="_4-迭代器模式"><a href="#_4-迭代器模式" class="header-anchor">#</a> 4. 迭代器模式</h3> <blockquote><p>迭代器模式（Iterator Pattern）是 Java 和 .Net 编程环境中非常常用的设计模式。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
+迭代器模式属于行为型模式。</p></blockquote> <p><strong><code>意图：</code></strong>
+提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。</p> <p><strong><code>主要解决：</code></strong>
+不同的方式来遍历整个整合对象。</p> <p><strong><code>何时使用：</code></strong>
+遍历一个聚合对象。</p> <p><strong><code>如何解决：</code></strong>
+把在元素之间游走的责任交给迭代器，而不是聚合对象。</p> <p><strong><code>关键代码：</code></strong>
+定义接口：hasNext, next。</p> <p><strong><code>应用实例：</code></strong>
+JAVA 中的 iterator。</p> <p><strong><code>优点：</code></strong>
+1、它支持以不同的方式遍历一个聚合对象。
+2、迭代器简化了聚合类。
+3、在同一个聚合上可以有多个遍历。
+4、在迭代器模式中，增加新的聚合类和迭代器类都很方便，无须修改原有代码。</p> <p><strong><code>缺点：</code></strong>
+由于迭代器模式将存储数据和遍历数据的职责分离，增加新的聚合类需要对应增加新的迭代器类，类的个数成对增加，这在一定程度上增加了系统的复杂性。</p> <p><strong><code>使用场景：</code></strong>
+1、访问一个聚合对象的内容而无须暴露它的内部表示。
+2、需要为聚合对象提供多种遍历方式。
+3、为遍历不同的聚合结构提供一个统一的接口。</p> <p><strong><code>注意事项：</code></strong>
+迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合的内部结构，又可让外部代码透明地访问集合内部的数据。</p> <h3 id="_5-责任链模式"><a href="#_5-责任链模式" class="header-anchor">#</a> 5. 责任链模式</h3> <blockquote><p>顾名思义，责任链模式（Chain of Responsibility Pattern）为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。
+在这种模式中，通常每个接收者都包含对另一个接收者的引用。如果一个对象不能处理该请求，那么它会把相同的请求传给下一个接收者，依此类推。</p></blockquote> <p><strong><code>意图：</code></strong>
+避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</p> <p><strong><code>主要解决：</code></strong>
+职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p> <p><strong><code>何时使用：</code></strong>
+在处理消息的时候以过滤很多道。</p> <p><strong><code>如何解决：</code></strong>
+拦截的类都实现统一接口。</p> <p><strong><code>关键代码：</code></strong>
+Handler 里面聚合它自己，在 HanleRequest 里判断是否合适，如果没达到条件则向下传递，向谁传递之前 set 进去。</p> <p><strong><code>应用实例：</code></strong><br>
+1、红楼梦中的&quot;击鼓传花&quot;。
+2、JS 中的事件冒泡。
+3、JAVA WEB 中 Apache Tomcat 对 Encoding 的处理，Struts2 的拦截器，jsp servlet 的 Filter。</p> <p><strong><code>优点：</code></strong><br>
+1、降低耦合度。它将请求的发送者和接收者解耦。
+2、简化了对象。使得对象不需要知道链的结构。
+3、增强给对象指派职责的灵活性。通过改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任。
+4、增加新的请求处理类很方便。</p> <p><strong><code>缺点：</code></strong><br>
+1、不能保证请求一定被接收。
+2、系统性能将受到一定影响，而且在进行代码调试时不太方便，可能会造成循环调用。
+3、可能不容易观察运行时的特征，有碍于除错。</p> <p><strong><code>使用场景：</code></strong><br>
+1、有多个对象可以处理同一个请求，具体哪个对象处理该请求由运行时刻自动确定。
+2、在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。
+3、可动态指定一组对象处理请求。</p> <p><strong><code>注意事项：</code></strong>
+在 JAVA WEB 中遇到很多应用。</p> <h3 id="_6-命令模式"><a href="#_6-命令模式" class="header-anchor">#</a> 6. 命令模式</h3> <blockquote><p>命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p></blockquote> <p><strong><code>意图：</code></strong>
+将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。</p> <p><strong><code>主要解决：</code></strong>
+在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。</p> <p><strong><code>何时使用：</code></strong>
+在某些场合，比如要对行为进行&quot;记录、撤销/重做、事务&quot;等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将&quot;行为请求者&quot;与&quot;行为实现者&quot;解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。</p> <p><strong><code>如何解决：</code></strong>
+通过调用者调用接受者执行命令，顺序：调用者→接受者→命令。</p> <p><strong><code>关键代码：</code></strong>
+定义三个角色：
+1、received 真正的命令执行对象
+2、Command
+3、invoker 使用命令对象的入口</p> <p><strong><code>应用实例：</code></strong>
+struts 1 中的 action 核心控制器 ActionServlet 只有一个，相当于 Invoker，而模型层的类会随着不同的应用有不同的模型类，相当于具体的 Command。</p> <p><strong><code>优点：</code></strong>
+1、降低了系统耦合度。
+2、新的命令可以很容易添加到系统中去。</p> <p><strong><code>缺点：</code></strong>
+使用命令模式可能会导致某些系统有过多的具体命令类。</p> <p><strong><code>使用场景：</code></strong>
+认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。</p> <p><strong><code>注意事项：</code></strong>
+系统需要支持命令的撤销(Undo)操作和恢复(Redo)操作，也可以考虑使用命令模式，见命令模式的扩展。</p> <h3 id="_7-备忘录模式"><a href="#_7-备忘录模式" class="header-anchor">#</a> 7. 备忘录模式</h3> <blockquote><p>模式（Memento Pattern）保存一个对象的某个状态，以便在适当的时候恢复对象。备忘录模式属于行为型模式。</p></blockquote> <p><strong><code>意图：</code></strong>
+在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。</p> <p><strong><code>主要解决：</code></strong>
+所谓备忘录模式就是在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。</p> <p><strong><code>何时使用：</code></strong>
+很多时候我们总是需要记录一个对象的内部状态，这样做的目的就是为了允许用户取消不确定或者错误的操作，能够恢复到他原先的状态，使得他有&quot;后悔药&quot;可吃。</p> <p><strong><code>如何解决：</code></strong>
+通过一个备忘录类专门存储对象状态。</p> <p><strong><code>关键代码：</code></strong>
+客户不与备忘录类耦合，与备忘录管理类耦合。</p> <p><strong><code>应用实例：</code></strong>
+1、后悔药。
+2、打游戏时的存档。
+3、Windows 里的 ctri + z。 4、IE 中的后退。
+4、数据库的事务管理。</p> <p><strong><code>优点：</code></strong>
+1、给用户提供了一种可以恢复状态的机制，可以使用户能够比较方便地回到某个历史的状态。
+2、实现了信息的封装，使得用户不需要关心状态的保存细节。</p> <p><strong><code>缺点：</code></strong>
+消耗资源。如果类的成员变量过多，势必会占用比较大的资源，而且每一次保存都会消耗一定的内存。</p> <p><strong><code>使用场景：</code></strong>
+1、需要保存/恢复数据的相关状态场景。
+2、提供一个可回滚的操作。</p> <p><strong><code>注意事项：</code></strong>
+1、为了符合迪米特原则，还要增加一个管理备忘录的类。
+2、为了节约内存，可使用原型模式+备忘录模式。</p> <h3 id="_8-状态模式"><a href="#_8-状态模式" class="header-anchor">#</a> 8. 状态模式</h3> <blockquote><p>在状态模式（State Pattern）中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。
+在状态模式中，我们创建表示各种状态的对象和一个行为随着状态对象改变而改变的 context 对象。</p></blockquote> <p><strong><code>意图：</code></strong>
+允许对象在内部状态发生改变时改变它的行为，对象看起来好像修改了它的类。</p> <p><strong><code>主要解决：</code></strong>
+对象的行为依赖于它的状态（属性），并且可以根据它的状态改变而改变它的相关行为。</p> <p><strong><code>何时使用：</code></strong>
+代码中包含大量与对象状态有关的条件语句。</p> <p><strong><code>如何解决：</code></strong>
+将各种具体的状态类抽象出来。</p> <p><strong><code>关键代码：</code></strong>
+通常命令模式的接口中只有一个方法。而状态模式的接口中有一个或者多个方法。而且，状态模式的实现类的方法，一般返回值，或者是改变实例变量的值。也就是说，状态模式一般和对象的状态有关。实现类的方法有不同的功能，覆盖接口中的方法。状态模式和命令模式一样，也可以用于消除 if...else 等条件选择语句。</p> <p><strong><code>应用实例：</code></strong>
+1、打篮球的时候运动员可以有正常状态、不正常状态和超常状态。
+2、曾侯乙编钟中，'钟是抽象接口','钟A'等是具体状态，'曾侯乙编钟'是具体环境（Context）。</p> <p><strong><code>优点：</code></strong>
+1、封装了转换规则。
+2、枚举可能的状态，在枚举状态之前需要确定状态种类。
+3、将所有与某个状态有关的行为放到一个类中，并且可以方便地增加新的状态，只需要改变对象状态即可改变对象的行为。
+4、允许状态转换逻辑与状态对象合成一体，而不是某一个巨大的条件语句块。
+5、可以让多个环境对象共享一个状态对象，从而减少系统中对象的个数。</p> <p><strong><code>缺点：</code></strong>
+1、状态模式的使用必然会增加系统类和对象的个数。
+2、状态模式的结构与实现都较为复杂，如果使用不当将导致程序结构和代码的混乱。
+3、状态模式对&quot;开闭原则&quot;的支持并不太好，对于可以切换状态的状态模式，增加新的状态类需要修改那些负责状态转换的源代码，否则无法切换到新增状态，而且修改某个状态类的行为也需修改对应类的源代码。</p> <p><strong><code>使用场景：</code></strong>
+1、行为随状态改变而改变的场景。
+2、条件、分支语句的代替者。</p> <p><strong><code>注意事项：</code></strong>
+在行为受状态约束的时候使用状态模式，而且状态不超过 5 个。</p> <h3 id="_9-访问者模式"><a href="#_9-访问者模式" class="header-anchor">#</a> 9. 访问者模式</h3> <blockquote><p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。</p></blockquote> <p><strong><code>意图：</code></strong>
+主要将数据结构与数据操作分离。</p> <p><strong><code>主要解决：</code></strong>
+稳定的数据结构和易变的操作耦合问题。</p> <p><strong><code>何时使用：</code></strong>
+需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，使用访问者模式将这些封装到类中。</p> <p><strong><code>如何解决：</code></strong>
+在被访问的类里面加一个对外提供接待访问者的接口。</p> <p><strong><code>关键代码：</code></strong>
+在数据基础类里面有一个方法接受访问者，将自身引用传入访问者。</p> <p><strong><code>应用实例：</code></strong>
+您在朋友家做客，您是访问者，朋友接受您的访问，您通过朋友的描述，然后对朋友的描述做出一个判断，这就是访问者模式。</p> <p><strong><code>优点：</code></strong>
+1、符合单一职责原则。
+2、优秀的扩展性。
+3、灵活性。</p> <p><strong><code>缺点：</code></strong>
+1、具体元素对访问者公布细节，违反了迪米特原则。
+2、具体元素变更比较困难。
+3、违反了依赖倒置原则，依赖了具体类，没有依赖抽象。</p> <p><strong><code>使用场景：</code></strong>
+1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。
+2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，也不希望在增加新操作时修改这些类。</p> <p><strong><code>注意事项：</code></strong>
+访问者可以对功能进行统一，可以做报表、UI、拦截器与过滤器。</p> <h3 id="_10-中介者模式"><a href="#_10-中介者模式" class="header-anchor">#</a> 10. 中介者模式</h3> <blockquote><p>中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。</p></blockquote> <p><strong><code>意图：</code></strong>
+用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</p> <p><strong><code>主要解决：</code></strong>
+对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p> <p><strong><code>何时使用：</code></strong>
+多个类相互耦合，形成了网状结构。</p> <p><strong><code>如何解决：</code></strong>
+将上述网状结构分离为星型结构。</p> <p><strong><code>关键代码：</code></strong>
+对象 Colleague 之间的通信封装到一个类中单独处理。</p> <p><strong><code>应用实例：</code></strong>
+1、中国加入 WTO 之前是各个国家相互贸易，结构复杂，现在是各个国家通过 WTO 来互相贸易。
+2、机场调度系统。
+3、MVC 框架，其中C（控制器）就是 M（模型）和 V（视图）的中介者。</p> <p><strong><code>优点：</code></strong><br>
+1、降低了类的复杂度，将一对多转化成了一对一。
+2、各个类之间的解耦。
+3、符合迪米特原则。</p> <p><strong><code>缺点：</code></strong>
+中介者会庞大，变得复杂难以维护。</p> <p><strong><code>使用场景：</code></strong>
+1、系统中对象之间存在比较复杂的引用关系，导致它们之间的依赖关系结构混乱而且难以复用该对象。
+2、想通过一个中间类来封装多个类中的行为，而又不想生成太多的子类。</p> <p><strong><code>注意事项：</code></strong>
+不应当在职责混乱的时候使用。</p> <h3 id="_11-解释器模式"><a href="#_11-解释器模式" class="header-anchor">#</a> 11. 解释器模式</h3> <blockquote><p>解释器模式（Interpreter Pattern）提供了评估语言的语法或表达式的方式，它属于行为型模式。这种模式实现了一个表达式接口，该接口解释一个特定的上下文。这种模式被用在 SQL 解析、符号处理引擎等。</p></blockquote> <p><strong><code>意图：</code></strong>
+给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。</p> <p><strong><code>主要解决：</code></strong>
+对于一些固定文法构建一个解释句子的解释器。</p> <p><strong><code>何时使用：</code></strong>
+如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。</p> <p><strong><code>如何解决：</code></strong>
+构件语法树，定义终结符与非终结符。</p> <p><strong><code>关键代码：</code></strong>
+构件环境类，包含解释器之外的一些全局信息，一般是 HashMap。</p> <p><strong><code>应用实例：</code></strong>
+编译器、运算表达式计算。</p> <p><strong><code>优点：</code></strong>
+1、可扩展性比较好，灵活。
+2、增加了新的解释表达式的方式。
+3、易于实现简单文法。</p> <p><strong><code>缺点：</code></strong>
+1、可利用场景比较少。
+2、对于复杂的文法比较难维护。
+3、解释器模式会引起类膨胀。
+4、解释器模式采用递归调用方法。</p> <p><strong><code>使用场景：</code></strong>
+1、可以将一个需要解释执行的语言中的句子表示为一个抽象语法树。
+2、一些重复出现的问题可以用一种简单的语言来进行表达。
+3、一个简单语法需要解释的场景。</p> <p><strong><code>注意事项：</code></strong>
+可利用场景比较少，JAVA 中如果碰到可以用 expression4J 代替。</p> <br></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ios/05多线程/GCD信号量.html" class="prev">
+        GCD 信号量的理解与使用
+      </a></span> <span class="next"><a href="/ios/06设计模式/被神化的MVVM.html">
+        被神化的【MVVM 模式】
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.21980600.js" defer></script><script src="/assets/js/2.47e3f61a.js" defer></script><script src="/assets/js/11.5db019af.js" defer></script>
+  </body>
+</html>
